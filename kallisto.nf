@@ -65,7 +65,6 @@ process index {
     //
     // Kallisto tools mapper index
     //
-    module load 'kallisto/0.44.0'
 
     """
     kallisto index -i transcriptome.index ${transcriptome_file}
@@ -87,17 +86,29 @@ process mapping {
     //
     // Kallisto tools mapper
     //
+    
 
-    module load 'kallisto/0.44.0'
+/*
+quantifying paired end data:
+       mkdir -p ${quant_result}/sample_${i}
+        kallisto quant -i ${transcriptome_dir}/transcripts.idx \
+                 -o ${quant_result}/sample_${i} \
+                 -b 100 -t 3 \
+                  <(zcat $reads/sample${i}_R1.fastq.gz) <(zcat $reads/sample${i}_R2.fastq.gz)
+*/
 
     def single = reads instanceof Path
     if( !single ) {
+	println "*********** Quantifying paired end data ***********"
+
         """
         mkdir kallisto_${name}
         kallisto quant -b ${params.bootstrap} -i ${index} -t ${task.cpus} -o kallisto_${name} ${reads}
         """
     }  
     else {
+	println "*********** Quantifying single end reads **********"
+
         """
         mkdir kallisto_${name}
         kallisto quant --single -l ${params.fragment_len} -s ${params.fragment_sd} -b ${params.bootstrap} -i ${index} -t ${task.cpus} -o kallisto_${name} ${reads}
