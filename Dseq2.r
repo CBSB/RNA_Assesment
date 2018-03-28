@@ -1,7 +1,8 @@
 library(DESeq2)
 library(stringr)
 library(ggplot2)
-counts=read.csv("/home/alnour/h3bionet/RNA_Assesment/cleaned_counts_2.csv", row.names="Geneid")
+file_path = "/home/alnour/h3bionet/RNA_Assesment/cleaned_counts_2.csv"
+counts=read.csv(file_path, row.names="Geneid")
 samples = colnames(counts)
 condtions = append(rep("control",3), rep("normal", 3))
 all(rownames(samples) %in% colnames(counts))
