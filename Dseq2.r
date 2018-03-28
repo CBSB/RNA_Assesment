@@ -1,8 +1,16 @@
 library(DESeq2)
 library(stringr)
 library(ggplot2)
-file_path = "cleaned_counts_2.csv"
-counts=read.csv(file_path, row.names="Geneid")
+file_path = "test/counts.txt"
+counts=read.csv(file_path, sep="", head=T, skip=1, row.names = "Geneid")
+colnames(counts)[6:11]
+samples_list = c()
+for(counter in 1:6){
+    samples_list[counter] =  paste("sample", counter)
+}
+ colnames(counts)[6:11] = samples_list
+ counts = counts[,6:11]
+ 
 samples = colnames(counts)
 condtions = append(rep("control",3), rep("normal", 3))
 all(rownames(samples) %in% colnames(counts))
