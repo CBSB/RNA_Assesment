@@ -1,0 +1,739 @@
+Apr-07 14:04:24.320 [main] DEBUG nextflow.cli.Launcher - $> /usr/src/nextflow/nexflow-0.27.6.4775/nextflow run main.nf --reads /home/aeahmed/rna_assement/reads/*_R{1,2}.fastq.gz --genome GRCh37 --project test -profile standard -with-dag execution_dag.html -resume
+Apr-07 14:04:25.098 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 0.27.6
+Apr-07 14:04:25.206 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [fabulous_sinoussi] - revision: a9bd509a1c
+Apr-07 14:04:25.281 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: nextflow.config
+Apr-07 14:04:25.285 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/nextflow.config
+Apr-07 14:04:27.026 [main] DEBUG nextflow.config.ConfigBuilder - Setting config profile: 'standard'
+Apr-07 14:04:28.874 [main] DEBUG nextflow.Session - Session uuid: fee71612-3a06-43af-a1fb-46633d75eda4
+Apr-07 14:04:28.875 [main] DEBUG nextflow.Session - Run name: fabulous_sinoussi
+Apr-07 14:04:28.876 [main] DEBUG nextflow.Session - Executor pool size: 24
+Apr-07 14:04:28.901 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 0.27.6 build 4775
+  Modified: 19-02-2018 08:45 UTC (11:45 EAST)
+  System: Linux 4.4.0-116-generic
+  Runtime: Groovy 2.4.13 on Java HotSpot(TM) 64-Bit Server VM 1.8.0_91-b14
+  Encoding: UTF-8 (UTF-8)
+  Process: 49950@bionet [41.67.20.56]
+  CPUs: 24 - Mem: 125.9 GB (18.4 GB) - Swap: 128 GB (127.3 GB)
+Apr-07 14:04:29.260 [main] DEBUG nextflow.Session - Work-dir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work [ext2/ext3]
+Apr-07 14:04:29.967 [main] DEBUG nextflow.Session - Session start invoked
+Apr-07 14:04:30.658 [main] DEBUG nextflow.processor.TaskDispatcher - Dispatcher > start
+Apr-07 14:04:30.666 [main] DEBUG nextflow.trace.TraceFileObserver - Flow starting -- trace file: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/results/NGI-RNAseq_trace.txt
+Apr-07 14:04:30.701 [main] DEBUG nextflow.script.ScriptRunner - > Script parsing
+Apr-07 14:04:35.141 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Apr-07 14:04:35.781 [main] DEBUG nextflow.Channel - files for syntax: glob; folder: /home/aeahmed/rna_assement/reads/; pattern: *_R{1,2}.fastq.gz; options: [:]
+Apr-07 14:04:35.872 [main] INFO  nextflow.Nextflow - =========================================
+Apr-07 14:04:35.872 [main] INFO  nextflow.Nextflow -  NGI-RNAseq : RNA-Seq Best Practice v1.3.1
+Apr-07 14:04:35.872 [main] INFO  nextflow.Nextflow - =========================================
+Apr-07 14:04:35.887 [main] INFO  nextflow.Nextflow - Run Name       : fabulous_sinoussi
+Reads          : /home/aeahmed/rna_assement/reads/*_R{1,2}.fastq.gz
+Data Type      : Paired-End
+Genome         : GRCh37
+Strandedness   : None
+Trim R1        : 0
+Trim R2        : 0
+Trim 3' R1     : 0
+Trim 3' R2     : 0
+Aligner        : STAR
+Fasta Ref      : /home/mirrors/gatk-bundle/2.8/hg19/ucsc.hg19.fasta
+GTF Annotation : /home/CBSB_UofK.RNA_seq_assesment/Genome//gencode.v19.annotation.gtf
+BED Annotation : /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed
+Save Reference : No
+Save Trimmed   : No
+Save Intermeds : No
+Output dir     : ./results
+Working dir    : /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work
+Current home   : /home/aeahmed
+Current user   : aeahmed
+Current path   : /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37
+R libraries    : false
+Script dir     : /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37
+Config Profile : UPPMAX
+UPPMAX Project : test
+Apr-07 14:04:35.887 [main] INFO  nextflow.Nextflow - =========================================
+Apr-07 14:04:36.327 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-07 14:04:36.328 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-07 14:04:36.366 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-07 14:04:36.374 [main] INFO  nextflow.executor.Executor - [warm up] executor > local
+Apr-07 14:04:36.421 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=24; memory=125.9 GB; capacity=24; pollInterval=100ms; dumpInterval=5m
+Apr-07 14:04:36.445 [main] DEBUG nextflow.processor.TaskDispatcher - Starting monitor: LocalPollingMonitor
+Apr-07 14:04:36.446 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Apr-07 14:04:36.481 [main] DEBUG nextflow.executor.Executor - Invoke register for executor: local
+Apr-07 14:04:36.685 [main] DEBUG nextflow.Session - >>> barrier register (process: makeSTARindex)
+Apr-07 14:04:36.698 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > makeSTARindex -- maxForks: 24
+Apr-07 14:04:36.967 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-07 14:04:36.967 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-07 14:04:36.997 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-07 14:04:37.049 [main] DEBUG nextflow.Session - >>> barrier register (process: fastqc)
+Apr-07 14:04:37.049 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > fastqc -- maxForks: 24
+Apr-07 14:04:37.098 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-07 14:04:37.099 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-07 14:04:37.099 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-07 14:04:37.101 [main] DEBUG nextflow.Session - >>> barrier register (process: trim_galore)
+Apr-07 14:04:37.101 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > trim_galore -- maxForks: 24
+Apr-07 14:04:37.460 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-07 14:04:37.460 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-07 14:04:37.461 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-07 14:04:37.462 [main] DEBUG nextflow.Session - >>> barrier register (process: star)
+Apr-07 14:04:37.463 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > star -- maxForks: 24
+Apr-07 14:04:37.640 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-07 14:04:37.641 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-07 14:04:37.642 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-07 14:04:37.643 [main] DEBUG nextflow.Session - >>> barrier register (process: rseqc)
+Apr-07 14:04:37.643 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > rseqc -- maxForks: 24
+Apr-07 14:04:37.701 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-07 14:04:37.702 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-07 14:04:37.702 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-07 14:04:37.703 [main] DEBUG nextflow.Session - >>> barrier register (process: genebody_coverage)
+Apr-07 14:04:37.706 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > genebody_coverage -- maxForks: 24
+Apr-07 14:04:37.749 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-07 14:04:37.749 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-07 14:04:37.750 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-07 14:04:37.751 [main] DEBUG nextflow.Session - >>> barrier register (process: preseq)
+Apr-07 14:04:37.751 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > preseq -- maxForks: 24
+Apr-07 14:04:37.915 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-07 14:04:37.915 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-07 14:04:37.915 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-07 14:04:37.917 [main] DEBUG nextflow.Session - >>> barrier register (process: markDuplicates)
+Apr-07 14:04:37.918 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > markDuplicates -- maxForks: 24
+Apr-07 14:04:37.922 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [e2/62d707] Cached process > makeSTARindex (/home/mirrors/gatk-bundle/2.8/hg19/ucsc.hg19.fasta)
+Apr-07 14:04:37.957 [Actor Thread 8] INFO  nextflow.processor.TaskProcessor - [8b/c9e3da] Cached process > fastqc (sample3)
+Apr-07 14:04:37.966 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [7d/cbd3e9] Cached process > fastqc (sample6)
+Apr-07 14:04:37.974 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [06/98d923] Cached process > fastqc (sample4)
+Apr-07 14:04:37.988 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [09/954f6e] Cached process > fastqc (sample2)
+Apr-07 14:04:37.995 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [c8/d24e73] Cached process > trim_galore (sample1)
+Apr-07 14:04:37.998 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [e6/7f5a5b] Cached process > fastqc (sample1)
+Apr-07 14:04:37.998 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [25/f85cd7] Cached process > trim_galore (sample5)
+Apr-07 14:04:38.000 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [58/e9a044] Cached process > trim_galore (sample3)
+Apr-07 14:04:38.003 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [10/31a47a] Cached process > fastqc (sample5)
+Apr-07 14:04:38.005 [Actor Thread 12] INFO  nextflow.processor.TaskProcessor - [4e/f68ff6] Cached process > trim_galore (sample2)
+Apr-07 14:04:38.013 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [0c/ef528d] Cached process > trim_galore (sample6)
+Apr-07 14:04:38.048 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-07 14:04:38.048 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-07 14:04:38.048 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-07 14:04:38.049 [main] DEBUG nextflow.Session - >>> barrier register (process: dupradar)
+Apr-07 14:04:38.049 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > dupradar -- maxForks: 24
+Apr-07 14:04:38.054 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [ce/597c6d] Cached process > trim_galore (sample4)
+Apr-07 14:04:38.151 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-07 14:04:38.162 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-07 14:04:38.163 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-07 14:04:38.164 [main] DEBUG nextflow.Session - >>> barrier register (process: featureCounts)
+Apr-07 14:04:38.167 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > featureCounts -- maxForks: 24
+Apr-07 14:04:38.204 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-07 14:04:38.204 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-07 14:04:38.204 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-07 14:04:38.205 [main] DEBUG nextflow.Session - >>> barrier register (process: merge_featureCounts)
+Apr-07 14:04:38.205 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > merge_featureCounts -- maxForks: 24
+Apr-07 14:04:38.275 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-07 14:04:38.288 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-07 14:04:38.289 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-07 14:04:38.289 [Actor Thread 22] DEBUG nextflow.Session - <<< barrier arrive (process: fastqc)
+Apr-07 14:04:38.290 [main] DEBUG nextflow.Session - >>> barrier register (process: stringtieFPKM)
+Apr-07 14:04:38.290 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > stringtieFPKM -- maxForks: 24
+Apr-07 14:04:38.276 [Actor Thread 1] DEBUG nextflow.Session - <<< barrier arrive (process: makeSTARindex)
+Apr-07 14:04:38.285 [Actor Thread 23] DEBUG nextflow.Session - <<< barrier arrive (process: trim_galore)
+Apr-07 14:04:38.464 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [95/1f248c] Cached process > star (sample2)
+Apr-07 14:04:38.481 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-07 14:04:38.487 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-07 14:04:38.487 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-07 14:04:38.501 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [7c/d67bd3] Cached process > star (sample1)
+Apr-07 14:04:38.514 [main] DEBUG nextflow.Session - >>> barrier register (process: sample_correlation)
+Apr-07 14:04:38.514 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > sample_correlation -- maxForks: 24
+Apr-07 14:04:38.570 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [32/582fd7] Cached process > star (sample4)
+Apr-07 14:04:38.588 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [7c/98cdda] Cached process > star (sample3)
+Apr-07 14:04:38.598 [Actor Thread 12] INFO  nextflow.processor.TaskProcessor - [54/24c3f3] Cached process > star (sample6)
+Apr-07 14:04:38.600 [Actor Thread 16] INFO  nextflow.Nextflow -           Passed alignment > star (sample2)   >> 96.68% <<
+Apr-07 14:04:38.601 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [26/4a4393] Cached process > star (sample5)
+Apr-07 14:04:38.609 [Actor Thread 16] INFO  nextflow.Nextflow -           Passed alignment > star (sample1)   >> 95.43% <<
+Apr-07 14:04:38.695 [Actor Thread 16] INFO  nextflow.Nextflow -           Passed alignment > star (sample3)   >> 96.42% <<
+Apr-07 14:04:38.718 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [7b/687636] Cached process > featureCounts (sample2AlignedByCoord.out)
+Apr-07 14:04:38.728 [Actor Thread 25] INFO  nextflow.processor.TaskProcessor - [ed/7ec3b1] Cached process > featureCounts (sample1AlignedByCoord.out)
+Apr-07 14:04:38.729 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [13/05fcf4] Cached process > preseq (sample2AlignedByCoord.out)
+Apr-07 14:04:38.732 [Actor Thread 16] INFO  nextflow.Nextflow -           Passed alignment > star (sample4)   >> 96.83% <<
+Apr-07 14:04:38.728 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [c0/30d404] Cached process > stringtieFPKM (sample2AlignedByCoord.out)
+Apr-07 14:04:38.751 [Actor Thread 24] DEBUG nextflow.Session - <<< barrier arrive (process: star)
+Apr-07 14:04:38.779 [Actor Thread 16] INFO  nextflow.Nextflow -           Passed alignment > star (sample6)   >> 96.47% <<
+Apr-07 14:04:38.780 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [53/07a46f] Cached process > preseq (sample1AlignedByCoord.out)
+Apr-07 14:04:38.793 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [0f/1ec08d] Cached process > markDuplicates (sample2AlignedByCoord.out)
+Apr-07 14:04:38.800 [Actor Thread 20] INFO  nextflow.processor.TaskProcessor - [b8/80443a] Cached process > stringtieFPKM (sample1AlignedByCoord.out)
+Apr-07 14:04:38.827 [Actor Thread 16] INFO  nextflow.Nextflow -           Passed alignment > star (sample5)   >> 95.12% <<
+Apr-07 14:04:38.829 [Actor Thread 26] INFO  nextflow.processor.TaskProcessor - [e4/007e88] Cached process > markDuplicates (sample3AlignedByCoord.out)
+Apr-07 14:04:38.827 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [c0/6d684e] Cached process > markDuplicates (sample1AlignedByCoord.out)
+Apr-07 14:04:38.844 [Actor Thread 3] INFO  nextflow.processor.TaskProcessor - [e8/c3a0cb] Cached process > featureCounts (sample3AlignedByCoord.out)
+Apr-07 14:04:38.848 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [99/5b3113] Cached process > stringtieFPKM (sample3AlignedByCoord.out)
+Apr-07 14:04:38.848 [Actor Thread 25] INFO  nextflow.processor.TaskProcessor - [71/7cca27] Cached process > preseq (sample4AlignedByCoord.out)
+Apr-07 14:04:38.928 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [fc/1fd86d] Cached process > preseq (sample3AlignedByCoord.out)
+Apr-07 14:04:39.038 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: local
+Apr-07 14:04:39.039 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-07 14:04:39.043 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [43/93dc31] Cached process > preseq (sample6AlignedByCoord.out)
+Apr-07 14:04:39.058 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-07 14:04:39.060 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [66/03fdce] Cached process > stringtieFPKM (sample5AlignedByCoord.out)
+Apr-07 14:04:39.121 [main] DEBUG nextflow.Session - >>> barrier register (process: get_software_versions)
+Apr-07 14:04:39.121 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > get_software_versions -- maxForks: 24
+Apr-07 14:04:39.043 [Actor Thread 33] INFO  nextflow.processor.TaskProcessor - [e9/5acab6] Cached process > preseq (sample5AlignedByCoord.out)
+Apr-07 14:04:39.206 [Actor Thread 31] DEBUG nextflow.Session - <<< barrier arrive (process: preseq)
+Apr-07 14:04:39.207 [Actor Thread 38] INFO  nextflow.processor.TaskProcessor - [ee/7a5617] Cached process > markDuplicates (sample6AlignedByCoord.out)
+Apr-07 14:04:39.226 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [cf/3f4a4e] Cached process > markDuplicates (sample4AlignedByCoord.out)
+Apr-07 14:04:39.230 [Actor Thread 28] INFO  nextflow.processor.TaskProcessor - [4a/12f612] Cached process > featureCounts (sample6AlignedByCoord.out)
+Apr-07 14:04:39.247 [Actor Thread 32] INFO  nextflow.processor.TaskProcessor - [4c/7bb3c6] Cached process > stringtieFPKM (sample6AlignedByCoord.out)
+Apr-07 14:04:39.249 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [56/41967e] Cached process > stringtieFPKM (sample4AlignedByCoord.out)
+Apr-07 14:04:39.256 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [fe/1f2f7f] Cached process > featureCounts (sample5AlignedByCoord.out)
+Apr-07 14:04:39.258 [Actor Thread 39] INFO  nextflow.processor.TaskProcessor - [58/7153a0] Cached process > featureCounts (sample4AlignedByCoord.out)
+Apr-07 14:04:39.262 [Actor Thread 1] DEBUG nextflow.Session - <<< barrier arrive (process: stringtieFPKM)
+Apr-07 14:04:39.270 [Actor Thread 34] INFO  nextflow.processor.TaskProcessor - [52/9d64fb] Cached process > markDuplicates (sample5AlignedByCoord.out)
+Apr-07 14:04:39.272 [Actor Thread 1] DEBUG nextflow.Session - <<< barrier arrive (process: featureCounts)
+Apr-07 14:04:39.279 [Actor Thread 22] DEBUG nextflow.Session - <<< barrier arrive (process: markDuplicates)
+Apr-07 14:04:39.321 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: local
+Apr-07 14:04:39.321 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-07 14:04:39.321 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-07 14:04:39.322 [main] DEBUG nextflow.Session - >>> barrier register (process: multiqc)
+Apr-07 14:04:39.323 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > multiqc -- maxForks: 24
+Apr-07 14:04:39.326 [Actor Thread 38] INFO  nextflow.processor.TaskProcessor - [47/900dff] Cached process > merge_featureCounts (sample5AlignedByCoord.out_gene.featureCounts)
+Apr-07 14:04:39.331 [Actor Thread 1] DEBUG nextflow.Session - <<< barrier arrive (process: merge_featureCounts)
+Apr-07 14:04:39.349 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [1e/599e3b] Cached process > sample_correlation (sample5.sortedByCoord.out_gene.featureCounts.txt)
+Apr-07 14:04:39.353 [Actor Thread 1] DEBUG nextflow.Session - <<< barrier arrive (process: sample_correlation)
+Apr-07 14:04:39.374 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-07 14:04:39.374 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-07 14:04:39.379 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-07 14:04:39.404 [main] DEBUG nextflow.Session - >>> barrier register (process: output_documentation)
+Apr-07 14:04:39.404 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > output_documentation -- maxForks: 24
+Apr-07 14:04:39.493 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Apr-07 14:04:39.494 [main] DEBUG nextflow.Session - Session await
+Apr-07 14:04:39.570 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-07 14:04:39.594 [Task submitter] INFO  nextflow.Session - [93/022877] Submitted process > genebody_coverage (sample4AlignedByCoord.out)
+Apr-07 14:04:39.722 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-07 14:04:39.733 [Task submitter] INFO  nextflow.Session - [ba/aa071e] Submitted process > dupradar (sample2Aligned.sortedByCoord.out.markDups)
+Apr-07 14:04:39.747 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-07 14:04:39.761 [Task submitter] INFO  nextflow.Session - [78/2df4a7] Submitted process > rseqc (sample6AlignedByCoord.out)
+Apr-07 14:04:39.775 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-07 14:04:39.777 [Task submitter] INFO  nextflow.Session - [eb/a2c3cb] Submitted process > dupradar (sample6Aligned.sortedByCoord.out.markDups)
+Apr-07 14:04:39.804 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-07 14:04:39.814 [Task submitter] INFO  nextflow.Session - [45/88771d] Submitted process > dupradar (sample3Aligned.sortedByCoord.out.markDups)
+Apr-07 14:09:36.601 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 54; name: rseqc (sample6AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/78/2df4a7578c3d56d76dc0827225422f]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+Apr-07 14:14:36.626 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 54; name: rseqc (sample6AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/78/2df4a7578c3d56d76dc0827225422f]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+Apr-07 14:19:36.648 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 54; name: rseqc (sample6AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/78/2df4a7578c3d56d76dc0827225422f]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+Apr-07 14:24:36.724 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 54; name: rseqc (sample6AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/78/2df4a7578c3d56d76dc0827225422f]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+Apr-07 14:29:36.691 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 54; name: rseqc (sample6AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/78/2df4a7578c3d56d76dc0827225422f]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+Apr-07 14:34:36.738 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 54; name: rseqc (sample6AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/78/2df4a7578c3d56d76dc0827225422f]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+Apr-07 14:39:36.804 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 54; name: rseqc (sample6AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/78/2df4a7578c3d56d76dc0827225422f]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+Apr-07 14:44:36.816 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 54; name: rseqc (sample6AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/78/2df4a7578c3d56d76dc0827225422f]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+Apr-07 14:49:36.832 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 54; name: rseqc (sample6AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/78/2df4a7578c3d56d76dc0827225422f]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+Apr-07 14:54:36.862 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 54; name: rseqc (sample6AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/78/2df4a7578c3d56d76dc0827225422f]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+Apr-07 14:59:36.879 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 54; name: rseqc (sample6AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/78/2df4a7578c3d56d76dc0827225422f]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+Apr-07 15:04:36.919 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 54; name: rseqc (sample6AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/78/2df4a7578c3d56d76dc0827225422f]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+Apr-07 15:09:37.002 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 54; name: rseqc (sample6AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/78/2df4a7578c3d56d76dc0827225422f]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+Apr-07 15:14:37.091 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 54; name: rseqc (sample6AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/78/2df4a7578c3d56d76dc0827225422f]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+Apr-07 15:19:37.129 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 54; name: rseqc (sample6AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/78/2df4a7578c3d56d76dc0827225422f]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+Apr-07 15:24:37.206 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 54; name: rseqc (sample6AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/78/2df4a7578c3d56d76dc0827225422f]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+Apr-07 15:29:37.196 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 54; name: rseqc (sample6AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/78/2df4a7578c3d56d76dc0827225422f]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+Apr-07 15:33:34.177 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 54; name: rseqc (sample6AlignedByCoord.out); status: COMPLETED; exit: 0; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/78/2df4a7578c3d56d76dc0827225422f]
+Apr-07 15:33:34.200 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-07 15:33:34.213 [Task submitter] INFO  nextflow.Session - [52/2dc18a] Submitted process > rseqc (sample5AlignedByCoord.out)
+Apr-07 15:33:34.265 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 12 -- tasks to be submitted are shown below
+~> TaskHandler[id: 50; name: rseqc (sample4AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/09/b32d97e0edcb4f808068b8ce79fed3]
+~> TaskHandler[id: 27; name: rseqc (sample1AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/b4/e9097ff49bb6fd741d81a665fb5098]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+~> TaskHandler[id: 32; name: genebody_coverage (sample3AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/d2/9a80434aac2892f675f58c54087b57]
+~> TaskHandler[id: 25; name: rseqc (sample2AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/26/e9d43f35979f270c5c85507c60fce0]
+~> TaskHandler[id: 36; name: rseqc (sample3AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/72/df75043993a677eb001e7b18cd2394]
+~> TaskHandler[id: 48; name: genebody_coverage (sample6AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/59/90b390b5e7391d612846331863fad9]
+~> TaskHandler[id: 26; name: genebody_coverage (sample1AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/e1/51d05cb2e93c718a71dc2961b9795f]
+~> TaskHandler[id: 20; name: genebody_coverage (sample2AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/51/a13bf23b127441bedb97d3c6661ed5]
+~> TaskHandler[id: 40; name: dupradar (sample1Aligned.sortedByCoord.out.markDups); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/3e/b92bb639d68fd431a3f126cad7d353]
+.. remaining tasks omitted.
+Apr-07 15:34:37.266 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+Apr-07 15:39:37.364 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+Apr-07 15:44:37.383 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+Apr-07 15:49:37.387 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+Apr-07 15:54:37.459 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+Apr-07 15:59:37.483 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+Apr-07 16:04:37.579 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 5 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+~> TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+Apr-07 16:04:39.862 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 53; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: COMPLETED; exit: -; error: nextflow.exception.ProcessException: Process exceeded running time limit (2h); workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892]
+Apr-07 16:04:39.874 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-07 16:04:39.913 [Task submitter] INFO  nextflow.Session - [f8/9c965a] Submitted process > dupradar (sample5Aligned.sortedByCoord.out.markDups)
+Apr-07 16:04:39.946 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 11 -- tasks to be submitted are shown below
+~> TaskHandler[id: 50; name: rseqc (sample4AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/09/b32d97e0edcb4f808068b8ce79fed3]
+~> TaskHandler[id: 27; name: rseqc (sample1AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/b4/e9097ff49bb6fd741d81a665fb5098]
+~> TaskHandler[id: 32; name: genebody_coverage (sample3AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/d2/9a80434aac2892f675f58c54087b57]
+~> TaskHandler[id: 25; name: rseqc (sample2AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/26/e9d43f35979f270c5c85507c60fce0]
+~> TaskHandler[id: 36; name: rseqc (sample3AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/72/df75043993a677eb001e7b18cd2394]
+~> TaskHandler[id: 48; name: genebody_coverage (sample6AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/59/90b390b5e7391d612846331863fad9]
+~> TaskHandler[id: 26; name: genebody_coverage (sample1AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/e1/51d05cb2e93c718a71dc2961b9795f]
+~> TaskHandler[id: 20; name: genebody_coverage (sample2AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/51/a13bf23b127441bedb97d3c6661ed5]
+~> TaskHandler[id: 40; name: dupradar (sample1Aligned.sortedByCoord.out.markDups); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/3e/b92bb639d68fd431a3f126cad7d353]
+~> TaskHandler[id: 47; name: genebody_coverage (sample5AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f9/f98fc7ba8113d30798b6379f517e06]
+Apr-07 16:04:39.976 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'dupradar (sample2Aligned.sortedByCoord.out.markDups)'
+
+Caused by:
+  Process exceeded running time limit (2h)
+
+Command executed:
+
+  dupRadar.r sample2Aligned.sortedByCoord.out.markDups.bam gencode.v19.annotation.gtf TRUE
+
+Command exit status:
+  -
+
+Command output:
+  (empty)
+
+Work dir:
+  /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ba/aa071eb210c0c0b198c89227a13892
+
+Tip: when you have fixed the problem you can continue the execution appending to the nextflow command line the option `-resume`
+Apr-07 16:04:40.020 [Task monitor] INFO  nextflow.Session - Execution cancelled -- Finishing pending tasks before exit
+Apr-07 16:04:40.048 [main] DEBUG nextflow.Session - Session await > all process finished
+Apr-07 16:04:40.078 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: COMPLETED; exit: -; error: nextflow.exception.ProcessException: Process exceeded running time limit (2h); workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/a2c3cbbcc7dd81ea0f955e0ed17f5f]
+Apr-07 16:04:40.143 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 39; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: COMPLETED; exit: -; error: nextflow.exception.ProcessException: Process exceeded running time limit (2h); workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/45/88771df4a9549538c8765635a86269]
+Apr-07 16:09:37.622 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 16:14:37.670 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 16:19:37.686 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 16:24:37.746 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 16:29:37.794 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 16:34:37.848 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 16:39:37.904 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 16:44:38.002 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 16:49:38.090 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 16:54:38.118 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 16:59:38.151 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 17:04:38.236 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 17:09:38.330 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 17:14:38.334 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 17:19:38.390 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 17:24:38.404 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 17:29:38.438 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 17:34:38.498 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 17:39:38.502 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 17:44:38.566 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 17:48:47.192 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 57; name: rseqc (sample5AlignedByCoord.out); status: COMPLETED; exit: 0; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/52/2dc18a4307bd2ed769684e13c57f7d]
+Apr-07 17:48:47.209 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 11 -- tasks to be submitted are shown below
+~> TaskHandler[id: 50; name: rseqc (sample4AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/09/b32d97e0edcb4f808068b8ce79fed3]
+~> TaskHandler[id: 27; name: rseqc (sample1AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/b4/e9097ff49bb6fd741d81a665fb5098]
+~> TaskHandler[id: 32; name: genebody_coverage (sample3AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/d2/9a80434aac2892f675f58c54087b57]
+~> TaskHandler[id: 25; name: rseqc (sample2AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/26/e9d43f35979f270c5c85507c60fce0]
+~> TaskHandler[id: 36; name: rseqc (sample3AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/72/df75043993a677eb001e7b18cd2394]
+~> TaskHandler[id: 48; name: genebody_coverage (sample6AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/59/90b390b5e7391d612846331863fad9]
+~> TaskHandler[id: 26; name: genebody_coverage (sample1AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/e1/51d05cb2e93c718a71dc2961b9795f]
+~> TaskHandler[id: 20; name: genebody_coverage (sample2AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/51/a13bf23b127441bedb97d3c6661ed5]
+~> TaskHandler[id: 40; name: dupradar (sample1Aligned.sortedByCoord.out.markDups); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/3e/b92bb639d68fd431a3f126cad7d353]
+~> TaskHandler[id: 47; name: genebody_coverage (sample5AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f9/f98fc7ba8113d30798b6379f517e06]
+Apr-07 17:49:38.606 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 17:54:38.674 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 17:59:38.770 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 18:04:38.850 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+~> TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 18:04:40.239 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 61; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: COMPLETED; exit: -; error: nextflow.exception.ProcessException: Process exceeded running time limit (2h); workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f8/9c965a6a965a261164dcfd1ded65a6]
+Apr-07 18:04:40.287 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 11 -- tasks to be submitted are shown below
+~> TaskHandler[id: 50; name: rseqc (sample4AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/09/b32d97e0edcb4f808068b8ce79fed3]
+~> TaskHandler[id: 27; name: rseqc (sample1AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/b4/e9097ff49bb6fd741d81a665fb5098]
+~> TaskHandler[id: 32; name: genebody_coverage (sample3AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/d2/9a80434aac2892f675f58c54087b57]
+~> TaskHandler[id: 25; name: rseqc (sample2AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/26/e9d43f35979f270c5c85507c60fce0]
+~> TaskHandler[id: 36; name: rseqc (sample3AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/72/df75043993a677eb001e7b18cd2394]
+~> TaskHandler[id: 48; name: genebody_coverage (sample6AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/59/90b390b5e7391d612846331863fad9]
+~> TaskHandler[id: 26; name: genebody_coverage (sample1AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/e1/51d05cb2e93c718a71dc2961b9795f]
+~> TaskHandler[id: 20; name: genebody_coverage (sample2AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/51/a13bf23b127441bedb97d3c6661ed5]
+~> TaskHandler[id: 40; name: dupradar (sample1Aligned.sortedByCoord.out.markDups); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/3e/b92bb639d68fd431a3f126cad7d353]
+~> TaskHandler[id: 47; name: genebody_coverage (sample5AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f9/f98fc7ba8113d30798b6379f517e06]
+Apr-07 18:09:38.869 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+Apr-07 18:14:38.939 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+Apr-07 18:19:39.001 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+Apr-07 18:24:39.077 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+Apr-07 18:29:39.124 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+Apr-07 18:34:39.217 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+Apr-07 18:39:39.221 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+Apr-07 18:44:39.239 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+Apr-07 18:49:39.293 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+Apr-07 18:54:39.341 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+Apr-07 18:59:39.437 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+Apr-07 19:04:39.476 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- pending tasks are shown below
+~> TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+Apr-07 19:08:09.306 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 43; name: genebody_coverage (sample4AlignedByCoord.out); status: COMPLETED; exit: 0; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/93/022877f819561f12222700459cc745]
+Apr-07 19:08:09.325 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 11 -- tasks to be submitted are shown below
+~> TaskHandler[id: 50; name: rseqc (sample4AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/09/b32d97e0edcb4f808068b8ce79fed3]
+~> TaskHandler[id: 27; name: rseqc (sample1AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/b4/e9097ff49bb6fd741d81a665fb5098]
+~> TaskHandler[id: 32; name: genebody_coverage (sample3AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/d2/9a80434aac2892f675f58c54087b57]
+~> TaskHandler[id: 25; name: rseqc (sample2AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/26/e9d43f35979f270c5c85507c60fce0]
+~> TaskHandler[id: 36; name: rseqc (sample3AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/72/df75043993a677eb001e7b18cd2394]
+~> TaskHandler[id: 48; name: genebody_coverage (sample6AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/59/90b390b5e7391d612846331863fad9]
+~> TaskHandler[id: 26; name: genebody_coverage (sample1AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/e1/51d05cb2e93c718a71dc2961b9795f]
+~> TaskHandler[id: 20; name: genebody_coverage (sample2AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/51/a13bf23b127441bedb97d3c6661ed5]
+~> TaskHandler[id: 40; name: dupradar (sample1Aligned.sortedByCoord.out.markDups); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/3e/b92bb639d68fd431a3f126cad7d353]
+~> TaskHandler[id: 47; name: genebody_coverage (sample5AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/f9/f98fc7ba8113d30798b6379f517e06]
+Apr-07 19:09:40.082 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 19:14:39.767 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 19:19:39.871 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 19:24:39.890 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 19:29:39.969 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 19:34:39.941 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 19:39:40.121 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 19:44:39.935 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 19:49:40.004 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 19:54:40.169 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 19:59:40.091 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 20:04:40.413 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 20:09:40.162 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 20:14:40.389 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 20:19:40.337 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 20:24:40.433 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 20:29:40.363 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 20:34:40.447 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 20:39:40.518 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 20:44:40.535 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 20:49:40.540 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 20:54:40.618 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 20:59:40.718 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 21:04:40.760 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 21:09:40.753 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 21:14:40.843 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 21:19:40.939 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 21:24:41.050 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 21:29:41.150 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 21:34:41.191 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 21:39:41.297 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 21:44:41.342 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 21:49:41.429 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 21:54:41.461 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 21:59:41.451 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 22:04:41.468 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 22:09:41.481 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 22:14:41.557 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 22:19:41.576 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 22:24:41.704 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 22:29:41.718 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 22:34:41.797 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 22:39:41.864 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 22:44:41.903 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 22:49:42.022 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 22:54:42.107 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 22:59:42.163 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 23:04:42.230 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 23:09:42.304 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 23:14:42.379 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 23:19:42.403 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 23:24:42.483 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 23:29:42.509 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 23:34:42.565 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 23:39:42.619 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 23:44:42.698 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 23:49:42.781 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 23:54:42.829 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-07 23:59:42.929 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 00:04:42.954 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 00:09:42.986 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 00:14:43.056 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 00:19:43.051 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 00:24:43.110 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 00:29:43.108 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 00:34:43.112 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 00:39:43.310 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 00:44:43.220 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 00:49:43.304 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 00:54:43.357 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 00:59:43.405 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 01:04:43.451 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 01:09:43.463 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 01:14:43.508 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 01:19:43.578 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 01:24:43.628 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 01:29:43.712 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 01:34:43.707 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 01:39:43.768 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 01:44:43.850 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 01:49:43.938 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 01:54:43.961 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 01:59:44.002 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 02:04:43.999 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 02:09:44.054 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 02:14:44.121 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 02:19:44.184 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 02:24:44.258 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 02:29:44.302 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 02:34:44.340 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 02:39:44.409 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 02:44:44.446 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 02:49:44.453 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 02:54:44.499 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 02:59:44.532 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 03:04:44.546 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 03:09:44.562 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 03:14:44.634 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 03:19:44.686 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 03:24:44.718 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 03:29:44.786 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 03:34:44.807 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 03:39:44.896 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 03:44:44.967 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 03:49:44.999 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 03:54:45.022 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 03:59:45.109 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 04:04:45.140 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 04:09:45.813 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 04:14:45.342 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 04:19:45.320 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 04:24:45.521 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 04:29:45.513 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 04:34:45.439 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 04:39:45.510 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 04:44:45.596 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 04:49:45.677 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 04:54:45.738 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 04:59:45.778 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 05:04:45.900 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 05:09:45.918 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 05:14:45.902 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 05:19:45.929 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 05:24:45.922 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 05:29:46.080 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 05:34:46.039 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 05:39:46.097 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 05:44:46.149 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 05:49:46.227 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 05:54:46.282 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 05:59:46.318 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 06:04:46.325 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 06:09:46.359 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 06:14:46.408 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 06:19:46.493 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 06:24:46.565 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 06:29:46.577 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 06:34:46.717 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 06:39:46.805 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 06:44:46.776 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 06:49:46.793 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 06:54:46.838 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 06:59:46.826 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 07:04:46.974 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 07:09:46.990 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 07:14:47.087 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 07:19:47.122 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 07:24:47.162 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 07:29:47.260 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 07:34:47.358 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 07:39:47.414 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 07:44:47.478 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 07:49:47.561 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 07:54:47.697 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 07:59:47.713 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 08:04:47.814 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 08:09:47.818 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 08:14:47.877 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 08:19:47.967 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 08:24:48.037 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 08:29:48.112 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 08:34:48.125 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 08:39:48.177 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 08:44:48.271 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 08:49:48.320 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 08:54:48.366 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 08:59:48.434 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 09:04:48.484 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 09:09:48.565 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 09:14:48.599 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 09:19:48.633 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 09:24:48.630 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 09:29:48.679 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 09:34:48.754 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 09:39:48.814 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 09:44:48.879 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 09:49:48.899 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 09:54:48.924 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 09:59:48.962 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled
+Apr-08 10:04:48.960 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- Execution may be stalled

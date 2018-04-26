@@ -1,0 +1,92 @@
+nohup: ignoring input
++ reads=/home/CBSB_UofK.RNA_seq_assesment/Trimmed-Reads
+++ seq 1 6
++ for i in '`seq 1 6`'
++ echo '**************************** Running on sample 1 *************'
+**************************** Running on sample 1 *************
++ STAR --genomeDir /home/CBSB_UofK.RNA_seq_assesment/Genome/Index.trimmed_2Pass --readFilesIn /home/CBSB_UofK.RNA_seq_assesment/Trimmed-Reads/sample1_forward_paired.fq.gz /home/CBSB_UofK.RNA_seq_assesment/Trimmed-Reads/sample1_reverse_paired.fq.gz --runThreadN 8 --readFilesCommand zcat --sjdbGTFfile /home/CBSB_UofK.RNA_seq_assesment/Genome/Index.trimmed_2Pass/gencode.v27.chr_patch_hapl_scaff.annotation.gtf --outFileNamePrefix /home/CBSB_UofK.RNA_seq_assesment/Alignment/align_2pass_trimmed/sample_1 --outSAMtype BAM Unsorted SortedByCoordinate --outSAMstrandField intronMotif
+Mar 18 12:12:49 ..... started STAR run
+Mar 18 12:12:49 ..... loading genome
+Mar 18 12:14:42 ..... processing annotations GTF
+Mar 18 12:15:07 ..... inserting junctions into the genome indices
+Mar 18 12:17:02 ..... started mapping
+Mar 18 12:20:00 ..... started sorting BAM
+
+
+EXITING because of FATAL ERROR: number of bytes expected from the BAM bin does not agree with the actual size on disk: 3418690   0   12
+
+
+EXITING because of FATAL ERROR: number of bytes expected from the BAM bin does not agree with the actual size on disk: 3441805   0   14
+
+EXITING because of FATAL ERROR: number of bytes expected from the BAM bin does not agree with the actual size on disk: 6080294253   0   15
+
+Mar 18 12:20:00
+EXITING because of FATAL ERROR: number of bytes expected from the BAM bin does not agree with the actual size on disk: 3422949   0   11
+
+EXITING because of FATAL ERROR: number of bytes expected from the BAM bin does not agree with the actual size on disk: 1358164005   0   16
+
+Mar 18 12:20:00
+EXITING because of FATAL ERROR: number of bytes expected from the BAM bin does not agree with the actual size on disk: 3433185   0   13
+
+Mar 18 12:20:00 ...... FATAL ERROR, exiting
+Mar 18 12:20:00 ...... FATAL ERROR, exiting
+
+Mar 18 12:20:00 ...... FATAL ERROR, exiting
+ ...... FATAL ERROR, exiting
+ ...... FATAL ERROR, exiting
+Mar 18 12:20:00 ...... FATAL ERROR, exiting
+./align.sh.trimmed.2pass: line 12: 53170 Aborted                 (core dumped) STAR --genomeDir /home/CBSB_UofK.RNA_seq_assesment/Genome/Index.trimmed_2Pass --readFilesIn $reads/sample${i}_forward_paired.fq.gz $reads/sample${i}_reverse_paired.fq.gz --runThreadN 8 --readFilesCommand zcat --sjdbGTFfile /home/CBSB_UofK.RNA_seq_assesment/Genome/Index.trimmed_2Pass/gencode.v27.chr_patch_hapl_scaff.annotation.gtf --outFileNamePrefix /home/CBSB_UofK.RNA_seq_assesment/Alignment/align_2pass_trimmed/sample_${i} --outSAMtype BAM Unsorted SortedByCoordinate --outSAMstrandField intronMotif
++ for i in '`seq 1 6`'
++ echo '**************************** Running on sample 2 *************'
+**************************** Running on sample 2 *************
++ STAR --genomeDir /home/CBSB_UofK.RNA_seq_assesment/Genome/Index.trimmed_2Pass --readFilesIn /home/CBSB_UofK.RNA_seq_assesment/Trimmed-Reads/sample2_forward_paired.fq.gz /home/CBSB_UofK.RNA_seq_assesment/Trimmed-Reads/sample2_reverse_paired.fq.gz --runThreadN 8 --readFilesCommand zcat --sjdbGTFfile /home/CBSB_UofK.RNA_seq_assesment/Genome/Index.trimmed_2Pass/gencode.v27.chr_patch_hapl_scaff.annotation.gtf --outFileNamePrefix /home/CBSB_UofK.RNA_seq_assesment/Alignment/align_2pass_trimmed/sample_2 --outSAMtype BAM Unsorted SortedByCoordinate --outSAMstrandField intronMotif
+Mar 18 Mar 18 12:26:14 ..... processing annotations GTF
+Mar 18 12:27:23 ....Mar 18 12:44:42 ..... processing annotations GTF
+Mar 18 12:45:21 ..... inserting junctions into the genome indices
+Mar 18 12:47:28 ..... started mapping
+Mar 18 12:50:50 ..... started sorting BAM
+Mar 18 12:54:10 ..... finished successfully
++ for i in '`seq 1 6`'
++ echo '**************************** Running on sample 3 *************'
+**************************** Running on sample 3 *************
++ STAR --genomeDir /home/CBSB_UofK.RNA_seq_assesment/Genome/Index.trimmed_2Pass --readFilesIn /home/CBSB_UofK.RNA_seq_assesment/Trimmed-Reads/sample3_forward_paired.fq.gz /home/CBSB_UofK.RNA_seq_assesment/Trimmed-Reads/sample3_reverse_paired.fq.gz --runThreadN 8 --readFilesCommand zcat --sjdbGTFfile /home/CBSB_UofK.RNA_seq_assesment/Genome/Index.trimmed_2Pass/gencode.v27.chr_patch_hapl_scaff.annotation.gtf --outFileNamePrefix /home/CBSB_UofK.RNA_seq_assesment/Alignment/align_2pass_trimmed/sample_3 --outSAMtype BAM Unsorted SortedByCoordinate --outSAMstrandField intronMotif
+Mar 18 12:54:12 ..... started STAR run
+Mar 18 12:54:12 ..... loading genome
+Mar 18 13:02:50 ..... processing annotations GTF
+Mar 18 13:06:26 ..... inserting junctions into the genome indices
+Mar 18 13:10:15 ..... started mapping
+Mar 18 13:20:12 ..... started sorting BAM
+Mar 18 13:22:11 ..... finished successfully
++ for i in '`seq 1 6`'
++ echo '**************************** Running on sample 4 *************'
+**************************** Running on sample 4 *************
++ STAR --genomeDir /home/CBSB_UofK.RNA_seq_assesment/Genome/Index.trimmed_2Pass --readFilesIn /home/CBSB_UofK.RNA_seq_assesment/Trimmed-Reads/sample4_forward_paired.fq.gz /home/CBSB_UofK.RNA_seq_assesment/Trimmed-Reads/sample4_reverse_paired.fq.gz --runThreadN 8 --readFilesCommand zcat --sjdbGTFfile /home/CBSB_UofK.RNA_seq_assesment/Genome/Index.trimmed_2Pass/gencode.v27.chr_patch_hapl_scaff.annotation.gtf --outFileNamePrefix /home/CBSB_UofK.RNA_seq_assesment/Alignment/align_2pass_trimmed/sample_4 --outSAMtype BAM Unsorted SortedByCoordinate --outSAMstrandField intronMotif
+Mar 18 13:22:13 ..... started STAR run
+Mar 18 13:22:13 ..... loading genome
+Mar 18 13:25:26 ..... processing annotations GTF
+Mar 18 13:25:48 ..... inserting junctions into the genome indices
+Mar 18 13:27:55 ..... started mapping
+Mar 18 13:32:36 ..... started sorting BAM
+Mar 18 13:35:11 ..... finished successfully
++ for i in '`seq 1 6`'
++ echo '**************************** Running on sample 5 *************'
+**************************** Running on sample 5 *************
++ STAR --genomeDir /home/CBSB_UofK.RNA_seq_assesment/Genome/Index.trimmed_2Pass --readFilesIn /home/CBSB_UofK.RNA_seq_assesment/Trimmed-Reads/sample5_forward_paired.fq.gz /home/CBSB_UofK.RNA_seq_assesment/Trimmed-Reads/sample5_reverse_paired.fq.gz --runThreadN 8 --readFilesCommand zcat --sjdbGTFfile /home/CBSB_UofK.RNA_seq_assesment/Genome/Index.trimmed_2Pass/gencode.v27.chr_patch_hapl_scaff.annotation.gtf --outFileNamePrefix /home/CBSB_UofK.RNA_seq_assesment/Alignment/align_2pass_trimmed/sample_5 --outSAMtype BAM Unsorted SortedByCoordinate --outSAMstrandField intronMotif
+Mar 18 13:35:13 ..... started STAR run
+Mar 18 13:35:13 ..... loading genome
+Mar 18 13:39:09 ..... processing annotations GTF
+Mar 18 13:39:36 ..... inserting junctions into the genome indices
+Mar 18 13:41:48 ..... started mapping
+Mar 18 13:47:19 ..... started sorting BAM
+Mar 18 13:49:51 ..... finished successfully
++ for i in '`seq 1 6`'
++ echo '**************************** Running on sample 6 *************'
+**************************** Running on sample 6 *************
++ STAR --genomeDir /home/CBSB_UofK.RNA_seq_assesment/Genome/Index.trimmed_2Pass --readFilesIn /home/CBSB_UofK.RNA_seq_assesment/Trimmed-Reads/sample6_forward_paired.fq.gz /home/CBSB_UofK.RNA_seq_assesment/Trimmed-Reads/sample6_reverse_paired.fq.gz --runThreadN 8 --readFilesCommand zcat --sjdbGTFfile /home/CBSB_UofK.RNA_seq_assesment/Genome/Index.trimmed_2Pass/gencode.v27.chr_patch_hapl_scaff.annotation.gtf --outFileNamePrefix /home/CBSB_UofK.RNA_seq_assesment/Alignment/align_2pass_trimmed/sample_6 --outSAMtype BAM Unsorted SortedByCoordinate --outSAMstrandField intronMotif
+Mar 18 13:49:53 ..... started STAR run
+Mar 18 13:49:53 ..... loading genome
+Mar 18 13:54:51 ..... processing annotations GTF
+Mar 18 13:55:16 ..... inserting junctions into the genome indices
+Mar 18 13:57:15 ..... started mapping
+Mar 18 14:00:45 ..... started sorting BAM
+Mar 18 14:03:09 ..... finished successfully

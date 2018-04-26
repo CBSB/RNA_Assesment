@@ -1,0 +1,7 @@
+nohup: ignoring input
+
+EXITING because of FATAL ERROR: could not create output file: ./Log.out
+Check if the path ./ exists and you have permissions to write there
+
+Apr 17 14:36:13 ...... FATAL ERROR, exiting
+Done!

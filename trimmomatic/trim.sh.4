@@ -1,0 +1,17 @@
+#!/bin/bash
+
+module load trimmomatic/0.36
+
+set -x 
+
+java -jar /usr/src/trimmomatic/trimmomatic-0.36/trimmomatic-0.36.jar PE \
+        /home/CBSB_UofK.RNA_seq_assesment/dataset1/sample4_R1.fastq.gz \
+        /home/CBSB_UofK.RNA_seq_assesment/dataset1/sample4_R2.fastq.gz \
+        /home/CBSB_UofK.RNA_seq_assesment/Trimmomatic-output/sample4_forward_paired.fq.gz \
+        /home/CBSB_UofK.RNA_seq_assesment/Trimmomatic-output/sample4_forward_unpaired.fq.gz \
+        /home/CBSB_UofK.RNA_seq_assesment/Trimmomatic-output/sample4_reverse_paired.fq.gz \
+        /home/CBSB_UofK.RNA_seq_assesment/Trimmomatic-output/sample4_reverse_unpaired.fq.gz \
+        HEADCROP:10
+
+
+

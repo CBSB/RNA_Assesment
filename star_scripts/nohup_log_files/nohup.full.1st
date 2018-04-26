@@ -1,0 +1,69 @@
+nohup: ignoring input
++ reads=/home/CBSB_UofK.RNA_seq_assesment/reads/full_trim
+++ seq 1 6
++ for i in '`seq 1 6`'
++ echo '**************************** Running on sample 1 *************'
+**************************** Running on sample 1 *************
++ STAR --genomeDir /home/CBSB_UofK.RNA_seq_assesment/genome --readFilesIn /home/CBSB_UofK.RNA_seq_assesment/reads/full_trim/sample1_forward_paired.fq.gz /home/CBSB_UofK.RNA_seq_assesment/reads/full_trim/sample1_reverse_paired.fq.gz --runThreadN 8 --readFilesCommand zcat --sjdbGTFfile /home/CBSB_UofK.RNA_seq_assesment/genome/gencode.v27.chr_patch_hapl_scaff.annotation.gtf --outFileNamePrefix /home/CBSB_UofK.RNA_seq_assesment/alignment/full_trim/sample_1 --outSAMtype BAM Unsorted SortedByCoordinate
+Apr 17 15:00:10 ..... started STAR run
+Apr 17 15:00:10 ..... loading genome
+Apr 17 15:00:54 ..... processing annotations GTF
+Apr 17 15:01:13 ..... inserting junctions into the genome indices
+Apr 17 15:03:07 ..... started mapping
+Apr 17 15:06:04 ..... started sorting BAM
+Apr 17 15:07:39 ..... finished successfully
++ for i in '`seq 1 6`'
++ echo '**************************** Running on sample 2 *************'
+**************************** Running on sample 2 *************
++ STAR --genomeDir /home/CBSB_UofK.RNA_seq_assesment/genome --readFilesIn /home/CBSB_UofK.RNA_seq_assesment/reads/full_trim/sample2_forward_paired.fq.gz /home/CBSB_UofK.RNA_seq_assesment/reads/full_trim/sample2_reverse_paired.fq.gz --runThreadN 8 --readFilesCommand zcat --sjdbGTFfile /home/CBSB_UofK.RNA_seq_assesment/genome/gencode.v27.chr_patch_hapl_scaff.annotation.gtf --outFileNamePrefix /home/CBSB_UofK.RNA_seq_assesment/alignment/full_trim/sample_2 --outSAMtype BAM Unsorted SortedByCoordinate
+Apr 17 15:07:40 ..... started STAR run
+Apr 17 15:07:40 ..... loading genome
+Apr 17 15:08:26 ..... processing annotations GTF
+Apr 17 15:08:44 ..... inserting junctions into the genome indices
+Apr 17 15:10:31 ..... started mapping
+Apr 17 15:12:45 ..... started sorting BAM
+Apr 17 15:14:22 ..... finished successfully
++ for i in '`seq 1 6`'
++ echo '**************************** Running on sample 3 *************'
+**************************** Running on sample 3 *************
++ STAR --genomeDir /home/CBSB_UofK.RNA_seq_assesment/genome --readFilesIn /home/CBSB_UofK.RNA_seq_assesment/reads/full_trim/sample3_forward_paired.fq.gz /home/CBSB_UofK.RNA_seq_assesment/reads/full_trim/sample3_reverse_paired.fq.gz --runThreadN 8 --readFilesCommand zcat --sjdbGTFfile /home/CBSB_UofK.RNA_seq_assesment/genome/gencode.v27.chr_patch_hapl_scaff.annotation.gtf --outFileNamePrefix /home/CBSB_UofK.RNA_seq_assesment/alignment/full_trim/sample_3 --outSAMtype BAM Unsorted SortedByCoordinate
+Apr 17 15:14:23 ..... started STAR run
+Apr 17 15:14:23 ..... loading genome
+Apr 17 15:15:09 ..... processing annotations GTF
+Apr 17 15:15:27 ..... inserting junctions into the genome indices
+Apr 17 15:17:16 ..... started mapping
+Apr 17 15:20:29 ..... started sorting BAM
+Apr 17 15:22:13 ..... finished successfully
++ for i in '`seq 1 6`'
++ echo '**************************** Running on sample 4 *************'
+**************************** Running on sample 4 *************
++ STAR --genomeDir /home/CBSB_UofK.RNA_seq_assesment/genome --readFilesIn /home/CBSB_UofK.RNA_seq_assesment/reads/full_trim/sample4_forward_paired.fq.gz /home/CBSB_UofK.RNA_seq_assesment/reads/full_trim/sample4_reverse_paired.fq.gz --runThreadN 8 --readFilesCommand zcat --sjdbGTFfile /home/CBSB_UofK.RNA_seq_assesment/genome/gencode.v27.chr_patch_hapl_scaff.annotation.gtf --outFileNamePrefix /home/CBSB_UofK.RNA_seq_assesment/alignment/full_trim/sample_4 --outSAMtype BAM Unsorted SortedByCoordinate
+Apr 17 15:22:14 ..... started STAR run
+Apr 17 15:22:14 ..... loading genome
+Apr 17 15:23:30 ..... processing annotations GTF
+Apr 17 15:23:48 ..... inserting junctions into the genome indices
+Apr 17 15:25:45 ..... started mapping
+Apr 17 15:29:15 ..... started sorting BAM
+Apr 17 15:31:53 ..... finished successfully
++ for i in '`seq 1 6`'
++ echo '**************************** Running on sample 5 *************'
+**************************** Running on sample 5 *************
++ STAR --genomeDir /home/CBSB_UofK.RNA_seq_assesment/genome --readFilesIn /home/CBSB_UofK.RNA_seq_assesment/reads/full_trim/sample5_forward_paired.fq.gz /home/CBSB_UofK.RNA_seq_assesment/reads/full_trim/sample5_reverse_paired.fq.gz --runThreadN 8 --readFilesCommand zcat --sjdbGTFfile /home/CBSB_UofK.RNA_seq_assesment/genome/gencode.v27.chr_patch_hapl_scaff.annotation.gtf --outFileNamePrefix /home/CBSB_UofK.RNA_seq_assesment/alignment/full_trim/sample_5 --outSAMtype BAM Unsorted SortedByCoordinate
+Apr 17 15:31:54 ..... started STAR run
+Apr 17 15:31:54 ..... loading genome
+Apr 17 15:33:05 ..... processing annotations GTF
+Apr 17 15:33:24 ..... inserting junctions into the genome indices
+Apr 17 15:35:18 ..... started mapping
+Apr 17 15:38:22 ..... started sorting BAM
+Apr 17 15:40:17 ..... finished successfully
++ for i in '`seq 1 6`'
++ echo '**************************** Running on sample 6 *************'
+**************************** Running on sample 6 *************
++ STAR --genomeDir /home/CBSB_UofK.RNA_seq_assesment/genome --readFilesIn /home/CBSB_UofK.RNA_seq_assesment/reads/full_trim/sample6_forward_paired.fq.gz /home/CBSB_UofK.RNA_seq_assesment/reads/full_trim/sample6_reverse_paired.fq.gz --runThreadN 8 --readFilesCommand zcat --sjdbGTFfile /home/CBSB_UofK.RNA_seq_assesment/genome/gencode.v27.chr_patch_hapl_scaff.annotation.gtf --outFileNamePrefix /home/CBSB_UofK.RNA_seq_assesment/alignment/full_trim/sample_6 --outSAMtype BAM Unsorted SortedByCoordinate
+Apr 17 15:40:19 ..... started STAR run
+Apr 17 15:40:19 ..... loading genome
+Apr 17 15:41:41 ..... processing annotations GTF
+Apr 17 15:41:59 ..... inserting junctions into the genome indices
+Apr 17 15:43:57 ..... started mapping
+Apr 17 15:46:55 ..... started sorting BAM
+Apr 17 15:49:00 ..... finished successfully

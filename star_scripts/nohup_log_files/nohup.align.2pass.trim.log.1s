@@ -1,0 +1,4 @@
+nohup: ignoring input
+./align.sh.trimmed.2pass.s1: line 4: module: command not found
++ STAR --genomeDir /home/CBSB_UofK.RNA_seq_assesment/Genome/Index.trimmed_2Pass --readFilesIn /home/CBSB_UofK.RNA_seq_assesment/Trimmed-Reads/sample1_forward_paired.fq.gz /home/CBSB_UofK.RNA_seq_assesment/Trimmed-Reads/sample1_reverse_paired.fq.gz --runThreadN 8 --readFilesCommand zcat --sjdbGTFfile /home/CBSB_UofK.RNA_seq_assesment/Genome/Index.trimmed_2Pass/gencode.v27.chr_patch_hapl_scaff.annotation.gtf --outFileNamePrefix /home/CBSB_UofK.RNA_seq_assesment/Alignment/align_2pass_trimmed/sample_1S --outSAMtype BAM Unsorted SortedByCoordinate --outSAMstrandField intronMotif
+./align.sh.trimmed.2pass.s1: line 8: STAR: command not found

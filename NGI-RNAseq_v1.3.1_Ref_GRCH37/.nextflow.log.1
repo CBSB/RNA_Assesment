@@ -1,0 +1,324 @@
+Apr-11 15:17:59.983 [main] DEBUG nextflow.cli.Launcher - $> /usr/src/nextflow/nexflow-0.27.6.4775/nextflow run main.nf --reads /home/aeahmed/rna_assement/reads/*_R{1,2}.fastq.gz --genome GRCh37 --project test -profile standard -with-dag execution_dag.html -resume
+Apr-11 15:18:00.148 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 0.27.6
+Apr-11 15:18:00.172 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [trusting_albattani] - revision: a9bd509a1c
+Apr-11 15:18:00.192 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: nextflow.config
+Apr-11 15:18:00.194 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/nextflow.config
+Apr-11 15:18:00.554 [main] DEBUG nextflow.config.ConfigBuilder - Setting config profile: 'standard'
+Apr-11 15:18:00.935 [main] DEBUG nextflow.Session - Session uuid: fee71612-3a06-43af-a1fb-46633d75eda4
+Apr-11 15:18:00.935 [main] DEBUG nextflow.Session - Run name: trusting_albattani
+Apr-11 15:18:00.936 [main] DEBUG nextflow.Session - Executor pool size: 24
+Apr-11 15:18:00.950 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 0.27.6 build 4775
+  Modified: 19-02-2018 08:45 UTC (11:45 EAST)
+  System: Linux 4.4.0-119-generic
+  Runtime: Groovy 2.4.13 on Java HotSpot(TM) 64-Bit Server VM 1.8.0_91-b14
+  Encoding: UTF-8 (UTF-8)
+  Process: 16271@bionet [41.67.20.56]
+  CPUs: 24 - Mem: 125.9 GB (15.9 GB) - Swap: 128 GB (127.9 GB)
+Apr-11 15:18:01.019 [main] DEBUG nextflow.Session - Work-dir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work [ext2/ext3]
+Apr-11 15:18:01.307 [main] DEBUG nextflow.Session - Session start invoked
+Apr-11 15:18:01.318 [main] DEBUG nextflow.processor.TaskDispatcher - Dispatcher > start
+Apr-11 15:18:01.319 [main] DEBUG nextflow.trace.TraceFileObserver - Flow starting -- trace file: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/results/NGI-RNAseq_trace.txt
+Apr-11 15:18:01.337 [main] DEBUG nextflow.script.ScriptRunner - > Script parsing
+Apr-11 15:18:02.284 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Apr-11 15:18:02.432 [main] DEBUG nextflow.Channel - files for syntax: glob; folder: /home/aeahmed/rna_assement/reads/; pattern: *_R{1,2}.fastq.gz; options: [:]
+Apr-11 15:18:02.455 [main] INFO  nextflow.Nextflow - =========================================
+Apr-11 15:18:02.455 [main] INFO  nextflow.Nextflow -  NGI-RNAseq : RNA-Seq Best Practice v1.3.1
+Apr-11 15:18:02.455 [main] INFO  nextflow.Nextflow - =========================================
+Apr-11 15:18:02.460 [main] INFO  nextflow.Nextflow - Run Name       : trusting_albattani
+Reads          : /home/aeahmed/rna_assement/reads/*_R{1,2}.fastq.gz
+Data Type      : Paired-End
+Genome         : GRCh37
+Strandedness   : None
+Trim R1        : 0
+Trim R2        : 0
+Trim 3' R1     : 0
+Trim 3' R2     : 0
+Aligner        : STAR
+Fasta Ref      : /home/mirrors/gatk-bundle/2.8/hg19/ucsc.hg19.fasta
+GTF Annotation : /home/CBSB_UofK.RNA_seq_assesment/Genome//gencode.v19.annotation.gtf
+BED Annotation : /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed
+Save Reference : No
+Save Trimmed   : No
+Save Intermeds : No
+Output dir     : ./results
+Working dir    : /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work
+Current home   : /home/aeahmed
+Current user   : aeahmed
+Current path   : /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37
+R libraries    : false
+Script dir     : /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37
+Config Profile : UPPMAX
+UPPMAX Project : test
+Apr-11 15:18:02.461 [main] INFO  nextflow.Nextflow - =========================================
+Apr-11 15:18:02.538 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:18:02.538 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:18:02.544 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:18:02.547 [main] INFO  nextflow.executor.Executor - [warm up] executor > local
+Apr-11 15:18:02.552 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=24; memory=125.9 GB; capacity=24; pollInterval=100ms; dumpInterval=5m
+Apr-11 15:18:02.556 [main] DEBUG nextflow.processor.TaskDispatcher - Starting monitor: LocalPollingMonitor
+Apr-11 15:18:02.557 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Apr-11 15:18:02.559 [main] DEBUG nextflow.executor.Executor - Invoke register for executor: local
+Apr-11 15:18:02.598 [main] DEBUG nextflow.Session - >>> barrier register (process: makeSTARindex)
+Apr-11 15:18:02.600 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > makeSTARindex -- maxForks: 24
+Apr-11 15:18:02.634 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:18:02.635 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:18:02.635 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:18:02.636 [main] DEBUG nextflow.Session - >>> barrier register (process: fastqc)
+Apr-11 15:18:02.636 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > fastqc -- maxForks: 24
+Apr-11 15:18:02.646 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:18:02.647 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:18:02.647 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:18:02.648 [main] DEBUG nextflow.Session - >>> barrier register (process: trim_galore)
+Apr-11 15:18:02.648 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > trim_galore -- maxForks: 24
+Apr-11 15:18:02.702 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:18:02.702 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:18:02.702 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:18:02.704 [main] DEBUG nextflow.Session - >>> barrier register (process: star)
+Apr-11 15:18:02.706 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > star -- maxForks: 24
+Apr-11 15:18:02.739 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:18:02.739 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:18:02.739 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:18:02.740 [main] DEBUG nextflow.Session - >>> barrier register (process: rseqc)
+Apr-11 15:18:02.740 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > rseqc -- maxForks: 24
+Apr-11 15:18:02.754 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:18:02.755 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:18:02.755 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:18:02.756 [main] DEBUG nextflow.Session - >>> barrier register (process: genebody_coverage)
+Apr-11 15:18:02.763 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > genebody_coverage -- maxForks: 24
+Apr-11 15:18:02.773 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:18:02.774 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:18:02.774 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:18:02.776 [main] DEBUG nextflow.Session - >>> barrier register (process: preseq)
+Apr-11 15:18:02.776 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > preseq -- maxForks: 24
+Apr-11 15:18:02.788 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:18:02.789 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:18:02.789 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:18:02.791 [main] DEBUG nextflow.Session - >>> barrier register (process: markDuplicates)
+Apr-11 15:18:02.791 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > markDuplicates -- maxForks: 24
+Apr-11 15:18:02.809 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:18:02.810 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:18:02.810 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:18:02.811 [main] DEBUG nextflow.Session - >>> barrier register (process: dupradar)
+Apr-11 15:18:02.811 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > dupradar -- maxForks: 24
+Apr-11 15:18:02.825 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:18:02.825 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:18:02.826 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:18:02.827 [main] DEBUG nextflow.Session - >>> barrier register (process: featureCounts)
+Apr-11 15:18:02.828 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > featureCounts -- maxForks: 24
+Apr-11 15:18:02.839 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:18:02.839 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:18:02.839 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:18:02.840 [main] DEBUG nextflow.Session - >>> barrier register (process: merge_featureCounts)
+Apr-11 15:18:02.840 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > merge_featureCounts -- maxForks: 24
+Apr-11 15:18:02.851 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:18:02.851 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:18:02.852 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:18:02.853 [main] DEBUG nextflow.Session - >>> barrier register (process: stringtieFPKM)
+Apr-11 15:18:02.853 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > stringtieFPKM -- maxForks: 24
+Apr-11 15:18:02.888 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:18:02.888 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:18:02.888 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:18:02.891 [main] DEBUG nextflow.Session - >>> barrier register (process: sample_correlation)
+Apr-11 15:18:02.892 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > sample_correlation -- maxForks: 24
+Apr-11 15:18:02.916 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [e2/62d707] Cached process > makeSTARindex (/home/mirrors/gatk-bundle/2.8/hg19/ucsc.hg19.fasta)
+Apr-11 15:18:02.921 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [09/954f6e] Cached process > fastqc (sample2)
+Apr-11 15:18:02.923 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [10/31a47a] Cached process > fastqc (sample5)
+Apr-11 15:18:02.924 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [06/98d923] Cached process > fastqc (sample4)
+Apr-11 15:18:02.924 [Actor Thread 8] INFO  nextflow.processor.TaskProcessor - [8b/c9e3da] Cached process > fastqc (sample3)
+Apr-11 15:18:02.930 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [e6/7f5a5b] Cached process > fastqc (sample1)
+Apr-11 15:18:02.932 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [7d/cbd3e9] Cached process > fastqc (sample6)
+Apr-11 15:18:02.936 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: local
+Apr-11 15:18:02.936 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:18:02.936 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:18:02.937 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [0c/ef528d] Cached process > trim_galore (sample6)
+Apr-11 15:18:02.937 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [58/e9a044] Cached process > trim_galore (sample3)
+Apr-11 15:18:02.940 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [c8/d24e73] Cached process > trim_galore (sample1)
+Apr-11 15:18:02.937 [main] DEBUG nextflow.Session - >>> barrier register (process: get_software_versions)
+Apr-11 15:18:02.942 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > get_software_versions -- maxForks: 24
+Apr-11 15:18:02.944 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [ce/597c6d] Cached process > trim_galore (sample4)
+Apr-11 15:18:02.944 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [25/f85cd7] Cached process > trim_galore (sample5)
+Apr-11 15:18:02.945 [Actor Thread 12] INFO  nextflow.processor.TaskProcessor - [4e/f68ff6] Cached process > trim_galore (sample2)
+Apr-11 15:18:02.967 [Actor Thread 1] DEBUG nextflow.Session - <<< barrier arrive (process: makeSTARindex)
+Apr-11 15:18:02.977 [Actor Thread 21] DEBUG nextflow.Session - <<< barrier arrive (process: trim_galore)
+Apr-11 15:18:02.979 [Actor Thread 25] DEBUG nextflow.Session - <<< barrier arrive (process: fastqc)
+Apr-11 15:18:02.992 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: local
+Apr-11 15:18:02.992 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:18:02.992 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:18:02.993 [main] DEBUG nextflow.Session - >>> barrier register (process: multiqc)
+Apr-11 15:18:02.993 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > multiqc -- maxForks: 24
+Apr-11 15:18:03.014 [Actor Thread 20] INFO  nextflow.processor.TaskProcessor - [7c/98cdda] Cached process > star (sample3)
+Apr-11 15:18:03.017 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:18:03.018 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:18:03.019 [Actor Thread 3] INFO  nextflow.processor.TaskProcessor - [54/24c3f3] Cached process > star (sample6)
+Apr-11 15:18:03.019 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:18:03.029 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [95/1f248c] Cached process > star (sample2)
+Apr-11 15:18:03.029 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [7c/d67bd3] Cached process > star (sample1)
+Apr-11 15:18:03.031 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [26/4a4393] Cached process > star (sample5)
+Apr-11 15:18:03.032 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [32/582fd7] Cached process > star (sample4)
+Apr-11 15:18:03.032 [main] DEBUG nextflow.Session - >>> barrier register (process: output_documentation)
+Apr-11 15:18:03.033 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > output_documentation -- maxForks: 24
+Apr-11 15:18:03.036 [Actor Thread 15] INFO  nextflow.Nextflow -           Passed alignment > star (sample3)   >> 96.42% <<
+Apr-11 15:18:03.044 [Actor Thread 15] INFO  nextflow.Nextflow -           Passed alignment > star (sample6)   >> 96.47% <<
+Apr-11 15:18:03.044 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Apr-11 15:18:03.044 [main] DEBUG nextflow.Session - Session await
+Apr-11 15:18:03.050 [Actor Thread 15] INFO  nextflow.Nextflow -           Passed alignment > star (sample5)   >> 95.12% <<
+Apr-11 15:18:03.053 [Actor Thread 15] INFO  nextflow.Nextflow -           Passed alignment > star (sample1)   >> 95.43% <<
+Apr-11 15:18:03.053 [Actor Thread 25] DEBUG nextflow.Session - <<< barrier arrive (process: star)
+Apr-11 15:18:03.063 [Actor Thread 15] INFO  nextflow.Nextflow -           Passed alignment > star (sample4)   >> 96.83% <<
+Apr-11 15:18:03.066 [Actor Thread 15] INFO  nextflow.Nextflow -           Passed alignment > star (sample2)   >> 96.68% <<
+Apr-11 15:18:03.073 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [fc/1fd86d] Cached process > preseq (sample3AlignedByCoord.out)
+Apr-11 15:18:03.074 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [4c/7bb3c6] Cached process > stringtieFPKM (sample6AlignedByCoord.out)
+Apr-11 15:18:03.074 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [4a/12f612] Cached process > featureCounts (sample6AlignedByCoord.out)
+Apr-11 15:18:03.078 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [fe/1f2f7f] Cached process > featureCounts (sample5AlignedByCoord.out)
+Apr-11 15:18:03.086 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [99/5b3113] Cached process > stringtieFPKM (sample3AlignedByCoord.out)
+Apr-11 15:18:03.091 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [53/07a46f] Cached process > preseq (sample1AlignedByCoord.out)
+Apr-11 15:18:03.105 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [e8/c3a0cb] Cached process > featureCounts (sample3AlignedByCoord.out)
+Apr-11 15:18:03.114 [Actor Thread 12] INFO  nextflow.processor.TaskProcessor - [e4/007e88] Cached process > markDuplicates (sample3AlignedByCoord.out)
+Apr-11 15:18:03.114 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [c0/6d684e] Cached process > markDuplicates (sample1AlignedByCoord.out)
+Apr-11 15:18:03.115 [Actor Thread 8] INFO  nextflow.processor.TaskProcessor - [52/9d64fb] Cached process > markDuplicates (sample5AlignedByCoord.out)
+Apr-11 15:18:03.115 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [13/05fcf4] Cached process > preseq (sample2AlignedByCoord.out)
+Apr-11 15:18:03.116 [Actor Thread 20] INFO  nextflow.processor.TaskProcessor - [e9/5acab6] Cached process > preseq (sample5AlignedByCoord.out)
+Apr-11 15:18:03.123 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [43/93dc31] Cached process > preseq (sample6AlignedByCoord.out)
+Apr-11 15:18:03.126 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [ee/7a5617] Cached process > markDuplicates (sample6AlignedByCoord.out)
+Apr-11 15:18:03.127 [Actor Thread 3] INFO  nextflow.processor.TaskProcessor - [66/03fdce] Cached process > stringtieFPKM (sample5AlignedByCoord.out)
+Apr-11 15:18:03.127 [Actor Thread 35] INFO  nextflow.processor.TaskProcessor - [56/41967e] Cached process > stringtieFPKM (sample4AlignedByCoord.out)
+Apr-11 15:18:03.137 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [ed/7ec3b1] Cached process > featureCounts (sample1AlignedByCoord.out)
+Apr-11 15:18:03.137 [Actor Thread 39] INFO  nextflow.processor.TaskProcessor - [58/7153a0] Cached process > featureCounts (sample4AlignedByCoord.out)
+Apr-11 15:18:03.138 [Actor Thread 37] INFO  nextflow.processor.TaskProcessor - [71/7cca27] Cached process > preseq (sample4AlignedByCoord.out)
+Apr-11 15:18:03.140 [Actor Thread 38] DEBUG nextflow.Session - <<< barrier arrive (process: preseq)
+Apr-11 15:18:03.145 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [7b/687636] Cached process > featureCounts (sample2AlignedByCoord.out)
+Apr-11 15:18:03.145 [Actor Thread 32] INFO  nextflow.processor.TaskProcessor - [b8/80443a] Cached process > stringtieFPKM (sample1AlignedByCoord.out)
+Apr-11 15:18:03.147 [Actor Thread 25] DEBUG nextflow.Session - <<< barrier arrive (process: featureCounts)
+Apr-11 15:18:03.152 [Actor Thread 46] INFO  nextflow.processor.TaskProcessor - [0f/1ec08d] Cached process > markDuplicates (sample2AlignedByCoord.out)
+Apr-11 15:18:03.153 [Actor Thread 45] INFO  nextflow.processor.TaskProcessor - [c0/30d404] Cached process > stringtieFPKM (sample2AlignedByCoord.out)
+Apr-11 15:18:03.153 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [47/900dff] Cached process > merge_featureCounts (sample5AlignedByCoord.out_gene.featureCounts)
+Apr-11 15:18:03.158 [Actor Thread 25] DEBUG nextflow.Session - <<< barrier arrive (process: merge_featureCounts)
+Apr-11 15:18:03.159 [Actor Thread 25] DEBUG nextflow.Session - <<< barrier arrive (process: stringtieFPKM)
+Apr-11 15:18:03.160 [Actor Thread 41] INFO  nextflow.processor.TaskProcessor - [cf/3f4a4e] Cached process > markDuplicates (sample4AlignedByCoord.out)
+Apr-11 15:18:03.162 [Actor Thread 25] DEBUG nextflow.Session - <<< barrier arrive (process: markDuplicates)
+Apr-11 15:18:03.170 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [1e/599e3b] Cached process > sample_correlation (sample5.sortedByCoord.out_gene.featureCounts.txt)
+Apr-11 15:18:03.172 [Actor Thread 25] DEBUG nextflow.Session - <<< barrier arrive (process: sample_correlation)
+Apr-11 15:18:03.212 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:18:03.218 [Task submitter] INFO  nextflow.Session - [09/a4d098] Submitted process > genebody_coverage (sample3AlignedByCoord.out)
+Apr-11 15:18:03.251 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:18:03.252 [Task submitter] INFO  nextflow.Session - [6f/e60d49] Submitted process > rseqc (sample6AlignedByCoord.out)
+Apr-11 15:18:03.264 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:18:03.264 [Task submitter] INFO  nextflow.Session - [ef/be36b4] Submitted process > genebody_coverage (sample6AlignedByCoord.out)
+Apr-11 15:18:03.281 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:18:03.281 [Task submitter] INFO  nextflow.Session - [0c/20e3a3] Submitted process > dupradar (sample6Aligned.sortedByCoord.out.markDups)
+Apr-11 15:19:51.845 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 26; name: genebody_coverage (sample6AlignedByCoord.out); status: COMPLETED; exit: 0; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ef/be36b43ca2b1ef5333e22a9b1fddc9]
+Apr-11 15:19:51.859 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:19:51.860 [Task submitter] INFO  nextflow.Session - [61/8cc688] Submitted process > genebody_coverage (sample1AlignedByCoord.out)
+Apr-11 15:19:55.106 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 22; name: genebody_coverage (sample3AlignedByCoord.out); status: COMPLETED; exit: 0; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/09/a4d098ce8aa10bcc303fc4c4300465]
+Apr-11 15:19:55.111 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:19:55.111 [Task submitter] INFO  nextflow.Session - [bf/b64a8e] Submitted process > rseqc (sample5AlignedByCoord.out)
+Apr-11 15:20:59.958 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 25; name: rseqc (sample6AlignedByCoord.out); status: COMPLETED; exit: 1; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/6f/e60d49455392aa66b426b76155823a]
+Apr-11 15:20:59.966 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:20:59.967 [Task submitter] INFO  nextflow.Session - [59/ddefc3] Submitted process > rseqc (sample1AlignedByCoord.out)
+Apr-11 15:20:59.972 [Task monitor] INFO  nextflow.processor.TaskProcessor - [6f/e60d49] NOTE: Process `rseqc (sample6AlignedByCoord.out)` terminated with an error exit status (1) -- Error is ignored
+Apr-11 15:21:36.254 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 39; name: genebody_coverage (sample1AlignedByCoord.out); status: COMPLETED; exit: 0; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/61/8cc68852ac90d69fdc10679ee6e311]
+Apr-11 15:21:36.266 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:21:36.267 [Task submitter] INFO  nextflow.Session - [cb/b47dcb] Submitted process > genebody_coverage (sample2AlignedByCoord.out)
+Apr-11 15:23:02.619 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 54; name: genebody_coverage (sample2AlignedByCoord.out); status: COMPLETED; exit: 0; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/cb/b47dcbdad886e47726b8acea9aeb91]
+Apr-11 15:23:02.623 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:23:02.624 [Task submitter] INFO  nextflow.Session - [9b/ce3abe] Submitted process > genebody_coverage (sample5AlignedByCoord.out)
+Apr-11 15:23:02.720 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- pending tasks are shown below
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/0c/20e3a3f0811ccda546cee7b5254138]
+~> TaskHandler[id: 29; name: rseqc (sample5AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/bf/b64a8ed192039f4d12004a10290af0]
+~> TaskHandler[id: 40; name: rseqc (sample1AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/59/ddefc3b1811bf63ea7aa005684c601]
+~> TaskHandler[id: 35; name: genebody_coverage (sample5AlignedByCoord.out); status: SUBMITTED; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/9b/ce3abe31c984a68f013724706c7c39]
+Apr-11 15:23:19.371 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 29; name: rseqc (sample5AlignedByCoord.out); status: COMPLETED; exit: 1; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/bf/b64a8ed192039f4d12004a10290af0]
+Apr-11 15:23:19.373 [Task monitor] INFO  nextflow.processor.TaskProcessor - [bf/b64a8e] NOTE: Process `rseqc (sample5AlignedByCoord.out)` terminated with an error exit status (1) -- Error is ignored
+Apr-11 15:23:19.375 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:23:19.375 [Task submitter] INFO  nextflow.Session - [84/ba148a] Submitted process > rseqc (sample4AlignedByCoord.out)
+Apr-11 15:23:19.386 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 8 -- tasks to be submitted are shown below
+~> TaskHandler[id: 46; name: rseqc (sample2AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/0f/ff7c4bf62a28fb5eafb589e28df34a]
+~> TaskHandler[id: 24; name: rseqc (sample3AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/18b966952f0f4b631cdfe2dbc6f687]
+~> TaskHandler[id: 51; name: genebody_coverage (sample4AlignedByCoord.out); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/5f/93ca71eb9e8b7af93dbb0cbe3ed4ca]
+~> TaskHandler[id: 56; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/80/a82f621ec14a77f38d24d9823c2b71]
+~> TaskHandler[id: 62; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/91/807611183fc31cd86a902cded96d85]
+~> TaskHandler[id: 58; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/cb/e52a501ed0080a77e9bb8f3c35d732]
+~> TaskHandler[id: 57; name: dupradar (sample1Aligned.sortedByCoord.out.markDups); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/b9/0663b9d481b30a41d303f995f7e01f]
+~> TaskHandler[id: 63; name: dupradar (sample4Aligned.sortedByCoord.out.markDups); status: NEW; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ea/b1baa7829edfe575a202dcbffc4ef9]
+Apr-11 15:23:47.229 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 40; name: rseqc (sample1AlignedByCoord.out); status: COMPLETED; exit: 1; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/59/ddefc3b1811bf63ea7aa005684c601]
+Apr-11 15:23:47.234 [Task monitor] INFO  nextflow.processor.TaskProcessor - [59/ddefc3] NOTE: Process `rseqc (sample1AlignedByCoord.out)` terminated with an error exit status (1) -- Error is ignored
+Apr-11 15:23:47.236 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:23:47.237 [Task submitter] INFO  nextflow.Session - [0f/ff7c4b] Submitted process > rseqc (sample2AlignedByCoord.out)
+Apr-11 15:25:13.755 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 35; name: genebody_coverage (sample5AlignedByCoord.out); status: COMPLETED; exit: 0; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/9b/ce3abe31c984a68f013724706c7c39]
+Apr-11 15:25:13.759 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:25:13.759 [Task submitter] INFO  nextflow.Session - [5f/93ca71] Submitted process > genebody_coverage (sample4AlignedByCoord.out)
+Apr-11 15:26:05.292 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 46; name: rseqc (sample2AlignedByCoord.out); status: COMPLETED; exit: 1; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/0f/ff7c4bf62a28fb5eafb589e28df34a]
+Apr-11 15:26:05.293 [Task monitor] INFO  nextflow.processor.TaskProcessor - [0f/ff7c4b] NOTE: Process `rseqc (sample2AlignedByCoord.out)` terminated with an error exit status (1) -- Error is ignored
+Apr-11 15:26:05.295 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:26:05.297 [Task submitter] INFO  nextflow.Session - [eb/18b966] Submitted process > rseqc (sample3AlignedByCoord.out)
+Apr-11 15:26:42.285 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 45; name: rseqc (sample4AlignedByCoord.out); status: COMPLETED; exit: 1; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/84/ba148a1232512288d083bee6e9eafb]
+Apr-11 15:26:42.289 [Task monitor] INFO  nextflow.processor.TaskProcessor - [84/ba148a] NOTE: Process `rseqc (sample4AlignedByCoord.out)` terminated with an error exit status (1) -- Error is ignored
+Apr-11 15:26:42.291 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:26:42.291 [Task submitter] INFO  nextflow.Session - [80/a82f62] Submitted process > dupradar (sample3Aligned.sortedByCoord.out.markDups)
+Apr-11 15:26:42.293 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:26:42.294 [Task submitter] INFO  nextflow.Session - [91/807611] Submitted process > dupradar (sample2Aligned.sortedByCoord.out.markDups)
+Apr-11 15:27:10.385 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 51; name: genebody_coverage (sample4AlignedByCoord.out); status: COMPLETED; exit: 0; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/5f/93ca71eb9e8b7af93dbb0cbe3ed4ca]
+Apr-11 15:27:10.388 [Actor Thread 58] DEBUG nextflow.Session - <<< barrier arrive (process: genebody_coverage)
+Apr-11 15:27:10.397 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:27:10.398 [Task submitter] INFO  nextflow.Session - [cb/e52a50] Submitted process > dupradar (sample5Aligned.sortedByCoord.out.markDups)
+Apr-11 15:27:10.404 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:27:10.405 [Task submitter] INFO  nextflow.Session - [b9/0663b9] Submitted process > dupradar (sample1Aligned.sortedByCoord.out.markDups)
+Apr-11 15:28:02.793 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 6 -- pending tasks are shown below
+~> TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/0c/20e3a3f0811ccda546cee7b5254138]
+~> TaskHandler[id: 24; name: rseqc (sample3AlignedByCoord.out); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/18b966952f0f4b631cdfe2dbc6f687]
+~> TaskHandler[id: 56; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/80/a82f621ec14a77f38d24d9823c2b71]
+~> TaskHandler[id: 62; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/91/807611183fc31cd86a902cded96d85]
+~> TaskHandler[id: 58; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/cb/e52a501ed0080a77e9bb8f3c35d732]
+~> TaskHandler[id: 57; name: dupradar (sample1Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/b9/0663b9d481b30a41d303f995f7e01f]
+Apr-11 15:29:06.444 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 24; name: rseqc (sample3AlignedByCoord.out); status: COMPLETED; exit: 1; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/eb/18b966952f0f4b631cdfe2dbc6f687]
+Apr-11 15:29:06.445 [Task monitor] INFO  nextflow.processor.TaskProcessor - [eb/18b966] NOTE: Process `rseqc (sample3AlignedByCoord.out)` terminated with an error exit status (1) -- Error is ignored
+Apr-11 15:29:06.445 [Actor Thread 59] DEBUG nextflow.Session - <<< barrier arrive (process: rseqc)
+Apr-11 15:29:06.446 [Actor Thread 59] DEBUG nextflow.Session - <<< barrier arrive (process: multiqc)
+Apr-11 15:29:06.447 [Actor Thread 63] DEBUG nextflow.Session - <<< barrier arrive (process: output_documentation)
+Apr-11 15:29:06.447 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:29:06.447 [Task submitter] INFO  nextflow.Session - [ea/b1baa7] Submitted process > dupradar (sample4Aligned.sortedByCoord.out.markDups)
+Apr-11 15:32:48.086 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 56; name: dupradar (sample3Aligned.sortedByCoord.out.markDups); status: COMPLETED; exit: 137; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/80/a82f621ec14a77f38d24d9823c2b71]
+Apr-11 15:32:48.137 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'dupradar (sample3Aligned.sortedByCoord.out.markDups)'
+
+Caused by:
+  Process `dupradar (sample3Aligned.sortedByCoord.out.markDups)` terminated with an error exit status (137)
+
+Command executed:
+
+  dupRadar.r sample3Aligned.sortedByCoord.out.markDups.bam gencode.v19.annotation.gtf TRUE
+
+Command exit status:
+  137
+
+Command output:
+  (empty)
+
+Command error:
+  .command.sh: line 2: 40637 Killed                  dupRadar.r sample3Aligned.sortedByCoord.out.markDups.bam gencode.v19.annotation.gtf TRUE
+  .command.stub: line 99: 40632 Terminated              nxf_trace "$pid" .command.trace
+
+Work dir:
+  /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/80/a82f621ec14a77f38d24d9823c2b71
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+Apr-11 15:32:48.147 [Task monitor] INFO  nextflow.Session - Execution cancelled -- Finishing pending tasks before exit
+Apr-11 15:32:48.151 [main] DEBUG nextflow.Session - Session await > all process finished
+Apr-11 15:32:54.049 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 62; name: dupradar (sample2Aligned.sortedByCoord.out.markDups); status: COMPLETED; exit: 137; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/91/807611183fc31cd86a902cded96d85]
+Apr-11 15:33:00.387 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 59; name: dupradar (sample6Aligned.sortedByCoord.out.markDups); status: COMPLETED; exit: 137; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/0c/20e3a3f0811ccda546cee7b5254138]
+Apr-11 15:33:02.892 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- pending tasks are shown below
+~> TaskHandler[id: 58; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/cb/e52a501ed0080a77e9bb8f3c35d732]
+~> TaskHandler[id: 57; name: dupradar (sample1Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/b9/0663b9d481b30a41d303f995f7e01f]
+~> TaskHandler[id: 63; name: dupradar (sample4Aligned.sortedByCoord.out.markDups); status: RUNNING; exit: -; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ea/b1baa7829edfe575a202dcbffc4ef9]
+Apr-11 15:33:06.584 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 58; name: dupradar (sample5Aligned.sortedByCoord.out.markDups); status: COMPLETED; exit: 137; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/cb/e52a501ed0080a77e9bb8f3c35d732]
+Apr-11 15:33:13.580 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 57; name: dupradar (sample1Aligned.sortedByCoord.out.markDups); status: COMPLETED; exit: 137; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/b9/0663b9d481b30a41d303f995f7e01f]
+Apr-11 15:33:19.892 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 63; name: dupradar (sample4Aligned.sortedByCoord.out.markDups); status: COMPLETED; exit: 137; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/ea/b1baa7829edfe575a202dcbffc4ef9]
+Apr-11 15:33:19.897 [Actor Thread 64] DEBUG nextflow.Session - <<< barrier arrive (process: dupradar)
+Apr-11 15:33:19.901 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local)
+Apr-11 15:33:19.901 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Apr-11 15:33:20.022 [main] INFO  nextflow.Nextflow - [NGI-RNAseq] Pipeline Complete
+Apr-11 15:33:20.036 [main] DEBUG nextflow.trace.StatsObserver - Workflow completed > WorkflowStats[succeedCount=6; failedCount=6; ignoredCount=6; cachedCount=45; succeedDuration=10m 59s; failedDuration=3h 49m 34s; cachedDuration=1d 14h 34m 2s]
+Apr-11 15:33:20.036 [main] DEBUG nextflow.trace.TraceFileObserver - Flow completing -- flushing trace file
+Apr-11 15:33:20.040 [main] DEBUG nextflow.trace.TimelineObserver - Flow completing -- rendering html timeline
+Apr-11 15:33:20.155 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Apr-11 15:33:20.174 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

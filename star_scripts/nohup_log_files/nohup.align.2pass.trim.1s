@@ -1,0 +1,12 @@
+nohup: ignoring input
++ reads=/home/CBSB_UofK.RNA_seq_assesment/Trimmed-Reads
++ echo '**************************** Running on sample 1 *************'
+**************************** Running on sample 1 *************
++ STAR --genomeDir /home/CBSB_UofK.RNA_seq_assesment/Genome/Index.trimmed_2Pass --readFilesIn /home/CBSB_UofK.RNA_seq_assesment/Trimmed-Reads/sample1_forward_paired.fq.gz /home/CBSB_UofK.RNA_seq_assesment/Trimmed-Reads/sample1_reverse_paired.fq.gz --runThreadN 8 --readFilesCommand zcat --sjdbGTFfile '/home/CBSB_UofK.RNA_seq_assesment/Genome/Index.trimmed_2Pass/gencode.v27.chr_patch_hapl_scaff.annotati$'
+
+EXITING because of FATAL ERROR: could not create output file: ./Log.out
+Check if the path ./ exists and you have permissions to write there
+
+Mar 22 12:12:15 ...... FATAL ERROR, exiting
++ --outFileNamePrefix /home/CBSB_UofK.RNA_seq_assesment/Alignment/align_2pass_trimmed/sample_1S --outSAMtype BAM Unsorted SortedByCoordinate --outSAMstrandField intronMotif
+./align.sh.trimmed.2pass.s1: line 23: --outFileNamePrefix: command not found

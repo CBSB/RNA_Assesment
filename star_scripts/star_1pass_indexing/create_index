@@ -1,0 +1,10 @@
+#!/bin/bash
+
+module load STAR
+
+cd  /home/CBSB_UofK.RNA_seq_assesment/Genome
+
+STAR --runMode genomeGenerate --genomeDir /home/CBSB_UofK.RNA_seq_assesment/Genome --genomeFastaFiles Homo_sapiens_assembly38.fasta --runThreadN 3  --sjdbGTFfile gencode.v27.chr_patch_hapl_scaff.annotation.gtf
+
+echo "Done!" 
+

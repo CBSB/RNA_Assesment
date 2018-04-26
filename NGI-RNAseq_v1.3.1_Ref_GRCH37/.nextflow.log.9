@@ -1,0 +1,41 @@
+Apr-07 14:03:38.537 [main] DEBUG nextflow.cli.Launcher - $> /usr/src/nextflow/nexflow-0.27.6.4775/nextflow run main.nf --reads /home/aeahmed/rna_assement/reads/*_R{1,2}.fastq.gz --genome GRCh37 --project test -profile standard -with-dag execution_dag.html -resume
+Apr-07 14:03:39.342 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 0.27.6
+Apr-07 14:03:39.444 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [ecstatic_snyder] - revision: a9bd509a1c
+Apr-07 14:03:39.521 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: nextflow.config
+Apr-07 14:03:39.525 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/nextflow.config
+Apr-07 14:03:41.366 [main] DEBUG nextflow.config.ConfigBuilder - Setting config profile: 'standard'
+Apr-07 14:03:43.446 [main] DEBUG nextflow.Session - Session uuid: fee71612-3a06-43af-a1fb-46633d75eda4
+Apr-07 14:03:43.454 [main] DEBUG nextflow.Session - Run name: ecstatic_snyder
+Apr-07 14:03:43.487 [main] DEBUG nextflow.Session - Executor pool size: 24
+Apr-07 14:03:43.574 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 0.27.6 build 4775
+  Modified: 19-02-2018 08:45 UTC (11:45 EAST)
+  System: Linux 4.4.0-116-generic
+  Runtime: Groovy 2.4.13 on Java HotSpot(TM) 64-Bit Server VM 1.8.0_91-b14
+  Encoding: UTF-8 (UTF-8)
+  Process: 45973@bionet [41.67.20.56]
+  CPUs: 24 - Mem: 125.9 GB (19.4 GB) - Swap: 128 GB (127.3 GB)
+Apr-07 14:03:43.896 [main] DEBUG nextflow.Session - Work-dir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work [ext2/ext3]
+Apr-07 14:03:44.670 [main] ERROR nextflow.cli.Launcher - Unable to acquire lock on session with ID fee71612-3a06-43af-a1fb-46633d75eda4
+
+Common reasons of this error are:
+ - You are trying to resume the execution of an already running pipeline
+ - A previous execution was abruptly interrupted leaving the session open
+
+You can check what process is holding the lock file by using the following command:
+ - lsof /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/.nextflow/cache/fee71612-3a06-43af-a1fb-46633d75eda4/db/LOCK
+java.io.IOException: Unable to acquire lock on session with ID fee71612-3a06-43af-a1fb-46633d75eda4
+
+Common reasons of this error are:
+ - You are trying to resume the execution of an already running pipeline
+ - A previous execution was abruptly interrupted leaving the session open
+
+You can check what process is holding the lock file by using the following command:
+ - lsof /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/.nextflow/cache/fee71612-3a06-43af-a1fb-46633d75eda4/db/LOCK
+	at nextflow.CacheDB.openDb(CacheDB.groovy:113)
+	at nextflow.CacheDB.open(CacheDB.groovy:132)
+	at nextflow.Session.init(Session.groovy:315)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:155)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:229)
+	at nextflow.cli.Launcher.run(Launcher.groovy:427)
+	at nextflow.cli.Launcher.main(Launcher.groovy:581)

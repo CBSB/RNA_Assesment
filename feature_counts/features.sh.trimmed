@@ -1,0 +1,30 @@
+#!/bin/bash
+
+
+
+module load subread/1.6.0
+
+
+
+annotation=/home/CBSB_UofK.RNA_seq_assesment/Genome/Index.trimmed_2Pass/gencode.v27.chr_patch_hapl_scaff.annotation.gtf 
+alignment=/home/CBSB_UofK.RNA_seq_assesment/Alignment/align_2pass_trimmed
+
+
+
+
+featureCounts -p -t exon -g gene_id -a $annotation -T 6 \
+-o /home/CBSB_UofK.RNA_seq_assesment/Feature_count/Trimmed/counts.txt \
+        $alignment/sample_1Aligned.out.bam \
+        $alignment/sample_2Aligned.out.bam \
+        $alignment/sample_3Aligned.out.bam \
+        $alignment/sample_4Aligned.out.bam \
+        $alignment/sample_5Aligned.out.bam \
+        $alignment/sample_6Aligned.out.bam
+
+echo "Done"
+
+
+
+
+
+

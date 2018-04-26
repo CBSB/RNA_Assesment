@@ -1,0 +1,263 @@
+Apr-11 15:11:55.103 [main] DEBUG nextflow.cli.Launcher - $> /usr/src/nextflow/nexflow-0.27.6.4775/nextflow run main.nf --reads /home/aeahmed/rna_assement/reads/*_R{1,2}.fastq.gz --genome GRCh37 --project test -profile standard -with-dag execution_dag.html -resume
+Apr-11 15:11:55.307 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 0.27.6
+Apr-11 15:11:55.353 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [distracted_jang] - revision: a9bd509a1c
+Apr-11 15:11:55.375 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: nextflow.config
+Apr-11 15:11:55.379 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/nextflow.config
+Apr-11 15:11:55.811 [main] DEBUG nextflow.config.ConfigBuilder - Setting config profile: 'standard'
+Apr-11 15:11:56.244 [main] DEBUG nextflow.Session - Session uuid: fee71612-3a06-43af-a1fb-46633d75eda4
+Apr-11 15:11:56.244 [main] DEBUG nextflow.Session - Run name: distracted_jang
+Apr-11 15:11:56.246 [main] DEBUG nextflow.Session - Executor pool size: 24
+Apr-11 15:11:56.296 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 0.27.6 build 4775
+  Modified: 19-02-2018 08:45 UTC (11:45 EAST)
+  System: Linux 4.4.0-119-generic
+  Runtime: Groovy 2.4.13 on Java HotSpot(TM) 64-Bit Server VM 1.8.0_91-b14
+  Encoding: UTF-8 (UTF-8)
+  Process: 3738@bionet [41.67.20.56]
+  CPUs: 24 - Mem: 125.9 GB (26.5 GB) - Swap: 128 GB (127.9 GB)
+Apr-11 15:11:56.362 [main] DEBUG nextflow.Session - Work-dir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work [ext2/ext3]
+Apr-11 15:11:56.623 [main] DEBUG nextflow.Session - Session start invoked
+Apr-11 15:11:56.737 [main] DEBUG nextflow.processor.TaskDispatcher - Dispatcher > start
+Apr-11 15:11:56.738 [main] DEBUG nextflow.trace.TraceFileObserver - Flow starting -- trace file: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/results/NGI-RNAseq_trace.txt
+Apr-11 15:11:56.745 [main] DEBUG nextflow.script.ScriptRunner - > Script parsing
+Apr-11 15:11:57.643 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Apr-11 15:11:57.797 [main] DEBUG nextflow.Channel - files for syntax: glob; folder: /home/aeahmed/rna_assement/reads/; pattern: *_R{1,2}.fastq.gz; options: [:]
+Apr-11 15:11:57.820 [main] INFO  nextflow.Nextflow - =========================================
+Apr-11 15:11:57.821 [main] INFO  nextflow.Nextflow -  NGI-RNAseq : RNA-Seq Best Practice v1.3.1
+Apr-11 15:11:57.821 [main] INFO  nextflow.Nextflow - =========================================
+Apr-11 15:11:57.827 [main] INFO  nextflow.Nextflow - Run Name       : distracted_jang
+Reads          : /home/aeahmed/rna_assement/reads/*_R{1,2}.fastq.gz
+Data Type      : Paired-End
+Genome         : GRCh37
+Strandedness   : None
+Trim R1        : 0
+Trim R2        : 0
+Trim 3' R1     : 0
+Trim 3' R2     : 0
+Aligner        : STAR
+Fasta Ref      : /home/mirrors/gatk-bundle/2.8/hg19/ucsc.hg19.fasta
+GTF Annotation : /home/CBSB_UofK.RNA_seq_assesment/Genome//gencode.v19.annotation.gtf
+BED Annotation : /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed
+Save Reference : No
+Save Trimmed   : No
+Save Intermeds : No
+Output dir     : ./results
+Working dir    : /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work
+Current home   : /home/aeahmed
+Current user   : aeahmed
+Current path   : /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37
+R libraries    : false
+Script dir     : /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37
+Config Profile : UPPMAX
+UPPMAX Project : test
+Apr-11 15:11:57.827 [main] INFO  nextflow.Nextflow - =========================================
+Apr-11 15:11:57.920 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:11:57.921 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:11:57.929 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:11:57.932 [main] INFO  nextflow.executor.Executor - [warm up] executor > local
+Apr-11 15:11:57.939 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=24; memory=125.9 GB; capacity=24; pollInterval=100ms; dumpInterval=5m
+Apr-11 15:11:57.944 [main] DEBUG nextflow.processor.TaskDispatcher - Starting monitor: LocalPollingMonitor
+Apr-11 15:11:57.945 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Apr-11 15:11:57.948 [main] DEBUG nextflow.executor.Executor - Invoke register for executor: local
+Apr-11 15:11:57.990 [main] DEBUG nextflow.Session - >>> barrier register (process: makeSTARindex)
+Apr-11 15:11:57.993 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > makeSTARindex -- maxForks: 24
+Apr-11 15:11:58.043 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:11:58.043 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:11:58.043 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:11:58.044 [main] DEBUG nextflow.Session - >>> barrier register (process: fastqc)
+Apr-11 15:11:58.045 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > fastqc -- maxForks: 24
+Apr-11 15:11:58.062 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:11:58.062 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:11:58.062 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:11:58.064 [main] DEBUG nextflow.Session - >>> barrier register (process: trim_galore)
+Apr-11 15:11:58.067 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > trim_galore -- maxForks: 24
+Apr-11 15:11:58.155 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:11:58.157 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:11:58.166 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:11:58.169 [main] DEBUG nextflow.Session - >>> barrier register (process: star)
+Apr-11 15:11:58.170 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > star -- maxForks: 24
+Apr-11 15:11:58.219 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:11:58.220 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:11:58.220 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:11:58.221 [main] DEBUG nextflow.Session - >>> barrier register (process: rseqc)
+Apr-11 15:11:58.221 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > rseqc -- maxForks: 24
+Apr-11 15:11:58.240 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:11:58.240 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:11:58.241 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:11:58.242 [main] DEBUG nextflow.Session - >>> barrier register (process: genebody_coverage)
+Apr-11 15:11:58.243 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > genebody_coverage -- maxForks: 24
+Apr-11 15:11:58.257 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:11:58.257 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:11:58.261 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:11:58.263 [main] DEBUG nextflow.Session - >>> barrier register (process: preseq)
+Apr-11 15:11:58.263 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > preseq -- maxForks: 24
+Apr-11 15:11:58.289 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:11:58.289 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:11:58.290 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:11:58.292 [main] DEBUG nextflow.Session - >>> barrier register (process: markDuplicates)
+Apr-11 15:11:58.292 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > markDuplicates -- maxForks: 24
+Apr-11 15:11:58.313 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:11:58.313 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:11:58.313 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:11:58.314 [main] DEBUG nextflow.Session - >>> barrier register (process: dupradar)
+Apr-11 15:11:58.315 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > dupradar -- maxForks: 24
+Apr-11 15:11:58.334 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:11:58.334 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:11:58.334 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:11:58.336 [main] DEBUG nextflow.Session - >>> barrier register (process: featureCounts)
+Apr-11 15:11:58.336 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > featureCounts -- maxForks: 24
+Apr-11 15:11:58.349 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:11:58.349 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:11:58.349 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:11:58.350 [main] DEBUG nextflow.Session - >>> barrier register (process: merge_featureCounts)
+Apr-11 15:11:58.350 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > merge_featureCounts -- maxForks: 24
+Apr-11 15:11:58.367 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:11:58.368 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:11:58.368 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:11:58.369 [main] DEBUG nextflow.Session - >>> barrier register (process: stringtieFPKM)
+Apr-11 15:11:58.370 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > stringtieFPKM -- maxForks: 24
+Apr-11 15:11:58.416 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:11:58.417 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:11:58.417 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:11:58.419 [main] DEBUG nextflow.Session - >>> barrier register (process: sample_correlation)
+Apr-11 15:11:58.420 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > sample_correlation -- maxForks: 24
+Apr-11 15:11:58.444 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: local
+Apr-11 15:11:58.444 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:11:58.444 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:11:58.446 [main] DEBUG nextflow.Session - >>> barrier register (process: get_software_versions)
+Apr-11 15:11:58.446 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > get_software_versions -- maxForks: 24
+Apr-11 15:11:58.483 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [e2/62d707] Cached process > makeSTARindex (/home/mirrors/gatk-bundle/2.8/hg19/ucsc.hg19.fasta)
+Apr-11 15:11:58.491 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: local
+Apr-11 15:11:58.492 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:11:58.492 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:11:58.494 [main] DEBUG nextflow.Session - >>> barrier register (process: multiqc)
+Apr-11 15:11:58.494 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > multiqc -- maxForks: 24
+Apr-11 15:11:58.497 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [7d/cbd3e9] Cached process > fastqc (sample6)
+Apr-11 15:11:58.497 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [e6/7f5a5b] Cached process > fastqc (sample1)
+Apr-11 15:11:58.502 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [06/98d923] Cached process > fastqc (sample4)
+Apr-11 15:11:58.497 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [09/954f6e] Cached process > fastqc (sample2)
+Apr-11 15:11:58.497 [Actor Thread 8] INFO  nextflow.processor.TaskProcessor - [8b/c9e3da] Cached process > fastqc (sample3)
+Apr-11 15:11:58.497 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [10/31a47a] Cached process > fastqc (sample5)
+Apr-11 15:11:58.508 [Actor Thread 12] INFO  nextflow.processor.TaskProcessor - [4e/f68ff6] Cached process > trim_galore (sample2)
+Apr-11 15:11:58.508 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [0c/ef528d] Cached process > trim_galore (sample6)
+Apr-11 15:11:58.514 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [25/f85cd7] Cached process > trim_galore (sample5)
+Apr-11 15:11:58.517 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [ce/597c6d] Cached process > trim_galore (sample4)
+Apr-11 15:11:58.517 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [58/e9a044] Cached process > trim_galore (sample3)
+Apr-11 15:11:58.521 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [c8/d24e73] Cached process > trim_galore (sample1)
+Apr-11 15:11:58.532 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Apr-11 15:11:58.532 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Apr-11 15:11:58.537 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Apr-11 15:11:58.541 [main] DEBUG nextflow.Session - >>> barrier register (process: output_documentation)
+Apr-11 15:11:58.542 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > output_documentation -- maxForks: 24
+Apr-11 15:11:58.551 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Apr-11 15:11:58.551 [main] DEBUG nextflow.Session - Session await
+Apr-11 15:11:58.572 [Actor Thread 19] DEBUG nextflow.Session - <<< barrier arrive (process: makeSTARindex)
+Apr-11 15:11:58.573 [Actor Thread 25] DEBUG nextflow.Session - <<< barrier arrive (process: fastqc)
+Apr-11 15:11:58.574 [Actor Thread 26] DEBUG nextflow.Session - <<< barrier arrive (process: trim_galore)
+Apr-11 15:11:58.620 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [7c/98cdda] Cached process > star (sample3)
+Apr-11 15:11:58.620 [Actor Thread 12] INFO  nextflow.processor.TaskProcessor - [7c/d67bd3] Cached process > star (sample1)
+Apr-11 15:11:58.633 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [26/4a4393] Cached process > star (sample5)
+Apr-11 15:11:58.633 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [95/1f248c] Cached process > star (sample2)
+Apr-11 15:11:58.636 [Actor Thread 14] INFO  nextflow.Nextflow -           Passed alignment > star (sample3)   >> 96.42% <<
+Apr-11 15:11:58.645 [Actor Thread 14] INFO  nextflow.Nextflow -           Passed alignment > star (sample1)   >> 95.43% <<
+Apr-11 15:11:58.649 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [54/24c3f3] Cached process > star (sample6)
+Apr-11 15:11:58.649 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [32/582fd7] Cached process > star (sample4)
+Apr-11 15:11:58.657 [Actor Thread 14] INFO  nextflow.Nextflow -           Passed alignment > star (sample2)   >> 96.68% <<
+Apr-11 15:11:58.659 [Actor Thread 17] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed -- Cause: java.nio.file.NoSuchFileException: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed
+Apr-11 15:11:58.661 [Actor Thread 14] INFO  nextflow.Nextflow -           Passed alignment > star (sample5)   >> 95.12% <<
+Apr-11 15:11:58.662 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [b8/80443a] Cached process > stringtieFPKM (sample1AlignedByCoord.out)
+Apr-11 15:11:58.657 [Actor Thread 23] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed -- Cause: java.nio.file.NoSuchFileException: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed
+Apr-11 15:11:58.675 [Actor Thread 12] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed -- Cause: java.nio.file.NoSuchFileException: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed
+Apr-11 15:11:58.676 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [53/07a46f] Cached process > preseq (sample1AlignedByCoord.out)
+Apr-11 15:11:58.681 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [ed/7ec3b1] Cached process > featureCounts (sample1AlignedByCoord.out)
+Apr-11 15:11:58.683 [Actor Thread 1] DEBUG nextflow.Session - <<< barrier arrive (process: star)
+Apr-11 15:11:58.684 [Actor Thread 14] INFO  nextflow.Nextflow -           Passed alignment > star (sample4)   >> 96.83% <<
+Apr-11 15:11:58.685 [Actor Thread 31] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed -- Cause: java.nio.file.NoSuchFileException: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed
+Apr-11 15:11:58.688 [Actor Thread 3] INFO  nextflow.processor.TaskProcessor - [fc/1fd86d] Cached process > preseq (sample3AlignedByCoord.out)
+Apr-11 15:11:58.688 [Actor Thread 14] INFO  nextflow.Nextflow -           Passed alignment > star (sample6)   >> 96.47% <<
+Apr-11 15:11:58.695 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [fe/1f2f7f] Cached process > featureCounts (sample5AlignedByCoord.out)
+Apr-11 15:11:58.696 [Actor Thread 20] INFO  nextflow.processor.TaskProcessor - [e8/c3a0cb] Cached process > featureCounts (sample3AlignedByCoord.out)
+Apr-11 15:11:58.707 [Actor Thread 27] INFO  nextflow.processor.TaskProcessor - [7b/687636] Cached process > featureCounts (sample2AlignedByCoord.out)
+Apr-11 15:11:58.709 [Actor Thread 34] INFO  nextflow.processor.TaskProcessor - [66/03fdce] Cached process > stringtieFPKM (sample5AlignedByCoord.out)
+Apr-11 15:11:58.709 [Actor Thread 30] INFO  nextflow.processor.TaskProcessor - [13/05fcf4] Cached process > preseq (sample2AlignedByCoord.out)
+Apr-11 15:11:58.711 [Actor Thread 24] INFO  nextflow.processor.TaskProcessor - [99/5b3113] Cached process > stringtieFPKM (sample3AlignedByCoord.out)
+Apr-11 15:11:58.712 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [c0/30d404] Cached process > stringtieFPKM (sample2AlignedByCoord.out)
+Apr-11 15:11:58.718 [Actor Thread 32] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed -- Cause: java.nio.file.NoSuchFileException: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed
+Apr-11 15:11:58.718 [Actor Thread 36] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed -- Cause: java.nio.file.NoSuchFileException: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed
+Apr-11 15:11:58.718 [Actor Thread 4] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed -- Cause: java.nio.file.NoSuchFileException: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed
+Apr-11 15:11:58.719 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [e9/5acab6] Cached process > preseq (sample5AlignedByCoord.out)
+Apr-11 15:11:58.719 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [c0/6d684e] Cached process > markDuplicates (sample1AlignedByCoord.out)
+Apr-11 15:11:58.720 [Actor Thread 8] INFO  nextflow.processor.TaskProcessor - [e4/007e88] Cached process > markDuplicates (sample3AlignedByCoord.out)
+Apr-11 15:11:58.720 [Actor Thread 33] INFO  nextflow.processor.TaskProcessor - [52/9d64fb] Cached process > markDuplicates (sample5AlignedByCoord.out)
+Apr-11 15:11:58.720 [Actor Thread 15] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed -- Cause: java.nio.file.NoSuchFileException: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed
+Apr-11 15:11:58.722 [Actor Thread 7] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed -- Cause: java.nio.file.NoSuchFileException: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed
+Apr-11 15:11:58.721 [Actor Thread 37] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed -- Cause: java.nio.file.NoSuchFileException: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed
+Apr-11 15:11:58.723 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [71/7cca27] Cached process > preseq (sample4AlignedByCoord.out)
+Apr-11 15:11:58.733 [Actor Thread 39] INFO  nextflow.processor.TaskProcessor - [58/7153a0] Cached process > featureCounts (sample4AlignedByCoord.out)
+Apr-11 15:11:58.733 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [cf/3f4a4e] Cached process > markDuplicates (sample4AlignedByCoord.out)
+Apr-11 15:11:58.734 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [43/93dc31] Cached process > preseq (sample6AlignedByCoord.out)
+Apr-11 15:11:58.734 [Actor Thread 43] INFO  nextflow.processor.TaskProcessor - [4a/12f612] Cached process > featureCounts (sample6AlignedByCoord.out)
+Apr-11 15:11:58.735 [Actor Thread 29] INFO  nextflow.processor.TaskProcessor - [0f/1ec08d] Cached process > markDuplicates (sample2AlignedByCoord.out)
+Apr-11 15:11:58.735 [Actor Thread 45] INFO  nextflow.processor.TaskProcessor - [4c/7bb3c6] Cached process > stringtieFPKM (sample6AlignedByCoord.out)
+Apr-11 15:11:58.735 [Actor Thread 38] DEBUG nextflow.Session - <<< barrier arrive (process: preseq)
+Apr-11 15:11:58.746 [Actor Thread 13] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed -- Cause: java.nio.file.NoSuchFileException: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed
+Apr-11 15:11:58.748 [Actor Thread 1] DEBUG nextflow.Session - <<< barrier arrive (process: featureCounts)
+Apr-11 15:11:58.755 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [56/41967e] Cached process > stringtieFPKM (sample4AlignedByCoord.out)
+Apr-11 15:11:58.757 [Actor Thread 42] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed -- Cause: java.nio.file.NoSuchFileException: /home/CBSB_UofK.RNA_seq_assesment/Genome/ucsc.gencode.v19.annotation.bed
+Apr-11 15:11:58.768 [Actor Thread 1] DEBUG nextflow.Session - <<< barrier arrive (process: stringtieFPKM)
+Apr-11 15:11:58.770 [Actor Thread 39] INFO  nextflow.processor.TaskProcessor - [47/900dff] Cached process > merge_featureCounts (sample5AlignedByCoord.out_gene.featureCounts)
+Apr-11 15:11:58.772 [Actor Thread 1] DEBUG nextflow.Session - <<< barrier arrive (process: merge_featureCounts)
+Apr-11 15:11:58.772 [Actor Thread 44] INFO  nextflow.processor.TaskProcessor - [ee/7a5617] Cached process > markDuplicates (sample6AlignedByCoord.out)
+Apr-11 15:11:58.895 [Actor Thread 38] DEBUG nextflow.Session - <<< barrier arrive (process: markDuplicates)
+Apr-11 15:11:58.923 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [1e/599e3b] Cached process > sample_correlation (sample5.sortedByCoord.out_gene.featureCounts.txt)
+Apr-11 15:11:58.926 [Actor Thread 38] DEBUG nextflow.Session - <<< barrier arrive (process: sample_correlation)
+Apr-11 15:11:58.959 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:11:58.962 [Task submitter] INFO  nextflow.Session - [7e/b95749] Submitted process > genebody_coverage (sample3AlignedByCoord.out)
+Apr-11 15:11:58.989 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:11:58.991 [Task submitter] INFO  nextflow.Session - [a3/b68859] Submitted process > rseqc (sample6AlignedByCoord.out)
+Apr-11 15:11:58.998 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:11:58.999 [Task submitter] INFO  nextflow.Session - [53/d74c71] Submitted process > rseqc (sample2AlignedByCoord.out)
+Apr-11 15:11:59.023 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:11:59.023 [Task submitter] INFO  nextflow.Session - [c8/79ee91] Submitted process > dupradar (sample4Aligned.sortedByCoord.out.markDups)
+Apr-11 15:13:50.192 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 24; name: genebody_coverage (sample3AlignedByCoord.out); status: COMPLETED; exit: 0; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/7e/b95749ad66c020343e955ab896a9bc]
+Apr-11 15:13:50.201 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:13:50.203 [Task monitor] INFO  nextflow.processor.TaskProcessor - [7e/b95749] NOTE: Missing output file(s) `*.{txt,pdf,r,xls}` expected by process `genebody_coverage (sample3AlignedByCoord.out)` -- Error is ignored
+Apr-11 15:13:50.203 [Task submitter] INFO  nextflow.Session - [75/17eda6] Submitted process > genebody_coverage (sample1AlignedByCoord.out)
+Apr-11 15:15:04.982 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 32; name: rseqc (sample2AlignedByCoord.out); status: COMPLETED; exit: 1; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/53/d74c71f73897394d007273bbc4ba35]
+Apr-11 15:15:04.987 [Task monitor] INFO  nextflow.processor.TaskProcessor - [53/d74c71] NOTE: Process `rseqc (sample2AlignedByCoord.out)` terminated with an error exit status (1) -- Error is ignored
+Apr-11 15:15:04.987 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:15:04.988 [Task submitter] INFO  nextflow.Session - [5b/8e736c] Submitted process > rseqc (sample3AlignedByCoord.out)
+Apr-11 15:15:36.368 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 27; name: genebody_coverage (sample1AlignedByCoord.out); status: COMPLETED; exit: 0; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/75/17eda6acac124af66243e4674b17d2]
+Apr-11 15:15:36.374 [Task monitor] INFO  nextflow.processor.TaskProcessor - [75/17eda6] NOTE: Missing output file(s) `*.{txt,pdf,r,xls}` expected by process `genebody_coverage (sample1AlignedByCoord.out)` -- Error is ignored
+Apr-11 15:15:36.375 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:15:36.376 [Task submitter] INFO  nextflow.Session - [cb/117d8b] Submitted process > genebody_coverage (sample5AlignedByCoord.out)
+Apr-11 15:15:51.089 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 58; name: dupradar (sample4Aligned.sortedByCoord.out.markDups); status: COMPLETED; exit: 137; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/c8/79ee916bdeb209777942b1d91bf597]
+Apr-11 15:15:51.098 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Apr-11 15:15:51.099 [Task submitter] INFO  nextflow.Session - [84/a7cd12] Submitted process > dupradar (sample1Aligned.sortedByCoord.out.markDups)
+Apr-11 15:15:51.124 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'dupradar (sample4Aligned.sortedByCoord.out.markDups)'
+
+Caused by:
+  Process `dupradar (sample4Aligned.sortedByCoord.out.markDups)` terminated with an error exit status (137)
+
+Command executed:
+
+  dupRadar.r sample4Aligned.sortedByCoord.out.markDups.bam gencode.v19.annotation.gtf TRUE
+
+Command exit status:
+  137
+
+Command output:
+  (empty)
+
+Command error:
+  .command.sh: line 2:  4015 Killed                  dupRadar.r sample4Aligned.sortedByCoord.out.markDups.bam gencode.v19.annotation.gtf TRUE
+
+Work dir:
+  /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/c8/79ee916bdeb209777942b1d91bf597
+
+Tip: you can try to figure out what's wrong by changing to the process work dir and showing the script file named `.command.sh`
+Apr-11 15:15:51.136 [Task monitor] INFO  nextflow.Session - Execution cancelled -- Finishing pending tasks before exit
+Apr-11 15:15:51.147 [main] DEBUG nextflow.Session - Session await > all process finished
+Apr-11 15:15:55.826 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 55; name: rseqc (sample6AlignedByCoord.out); status: COMPLETED; exit: 1; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/a3/b68859ff3dab05a41a6b179ae6fbad]
+Apr-11 15:15:55.827 [Task monitor] INFO  nextflow.processor.TaskProcessor - [a3/b68859] NOTE: Process `rseqc (sample6AlignedByCoord.out)` terminated with an error exit status (1) -- Error is ignored
+Apr-11 15:16:28.275 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 37; name: genebody_coverage (sample5AlignedByCoord.out); status: COMPLETED; exit: 0; error: -; workDir: /home/aeahmed/rna_assement/src/RNA_Assesment/NGI-RNAseq_v1.3.1_Ref_GRCH37/work/cb/117d8b4ec8ddf0c00cdf32b6b30e40]

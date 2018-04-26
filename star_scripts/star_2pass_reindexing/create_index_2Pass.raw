@@ -1,0 +1,14 @@
+#!/bin/bash
+
+genomeDir=/home/CBSB_UofK.RNA_seq_assesment/genome/re_indexing.raw
+
+
+module load STAR
+
+
+STAR --runMode genomeGenerate --genomeDir $genomeDir --genomeFastaFiles /home/CBSB_UofK.RNA_seq_assesment/genome/re_indexing.raw/Homo_sapiens_assembly38.fasta \
+     --sjdbFileChrStartEnd /home/CBSB_UofK.RNA_seq_assesment/Alignment/1st_Pass/SJ.all --runThreadN 3 --sjdbGTFfile /home/CBSB_UofK.RNA_seq_assesment/genome/re_indexing.raw/gencode.v27.chr_patch_hapl_scaff.annotation.gtf
+
+echo "Done!" 
+
+
